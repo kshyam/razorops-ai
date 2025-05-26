@@ -1,0 +1,17 @@
+{% include search.html %}
+
+
+{% assign sorted_categories = site.posts | sort_and_group_categories %}
+<br>
+<p><b>LATEST POSTS</b></p>
+<ul style="margin-left: -22px;overflow-y: scroll;height: 2000px;">
+  {% for category in sorted_categories %}
+    <li>
+      <p><b>{{ category.name }}</b></p>
+      {% for post in category.posts limit:5 %}
+        <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+      {% endfor %}
+    </li><br>
+  {% endfor %}
+</ul>
+

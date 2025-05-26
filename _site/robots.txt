@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://razorops.com/sitemap.xml

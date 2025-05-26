@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% seo %}
+    {% include favicon.html %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/blog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--
+      HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5a50d614079115001207f66b&product=inline-share-buttons' async='async'></script>
+    
+  </head>
+  <body class="layout-blog">
+    <!-- navbar -->
+    <header class="default-header">{% include header.html %}</header>
+    <!-- <div class="integration-banner2">
+        <img src="/images/razorops-logo.png" height="65" class="Integration-banner-img">
+        <h2>Connect To Your Favourite Apps</h2>
+    </div>
+    <div class="container top-integration">
+        <div class="row">
+            <a href="{{ site.baseurl }}/integration/bitbucket/" class="text-decoration-none">
+                <div class="col-sm-4 integration-box">
+                    <div class="integration-content">
+                        <img src="/images/integration/bitbucket-integration.png"  height="82">
+                        <div class="integration-body">
+                            <h3>Bitbucket</h3>
+                            <p>Do integrate with your amazing favourite app.</p>
+                            <a href="{{ site.baseurl }}/integration/bitbucket/" class="text-decoration-none more-link">Learn More</a>
+                        </div>	
+                    </div>
+                </div>
+            </a>
+        
+            <a href="{{ site.baseurl }}/integration/gulp/" class="text-decoration-none">
+                <div class="col-sm-4 integration-box">
+                    <div class="integration-content">
+                        <img src="/images/integration/gulp-logo.png"  height="82">
+                        <div class="integration-body">
+                            <h3>Gulp</h3>
+                            <p>Do integrate with your amazing favourite app.</p>
+                            <a  href="{{ site.baseurl }}/integration/gulp/" class="text-decoration-none more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ site.baseurl }}/integration/docker/" class="text-decoration-none">
+                <div class="col-sm-4 integration-box">
+                    <div class="integration-content">
+                        <img src="/images/integration/docker-integration.png"  height="82">
+                        <div class="integration-body">
+                            <h3>Docker</h3>
+                            <p>Do integrate with your amazing favourite app.</p>
+                            <a href="{{ site.baseurl }}/integration/docker/" class="text-decoration-none more-link">Learn More</a>
+                        </div>	
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+    </div> -->
+   
+
+    <div class="Integration-container">
+        <div class="content-wraper">
+            <div class="blog-wraper">
+                  <div class="">
+                    <div class="row"> 
+
+                        <!-- Integration tool Menu BY Categories -->
+    
+                        <div class="col-md-3 integration-menu">
+                            <div class="container">
+                                <img src="{{ page.logo }}" width="120px" class="text-center" >
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#scm"  >
+                                    SCM
+                                </a>	
+                                </div>
+                                
+                                <br>
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#build-tools"  >
+                                    Build Tools
+                                </a>	
+                                </div>
+                                
+                                <br>
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#unit-testing-tools"  >
+                                    Unit Testing Tools
+                                </a>
+                                </div>
+                                
+                                <br>
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#test-coverage-report-tools"   >
+                                    Test Coverage Tools
+                                </a>
+                                </div>
+    
+                                <br>
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#container-registries" >
+                                    Container Registries
+                                </a>
+                                </div>
+    
+                                <br>
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#development-tools"   >
+                                    Kubernetes
+                                </a>
+                                </div>
+    
+                                <br>
+                                <br>
+                                <div class="menubtn-box">
+                                <a class="btn menu-btn"  href="/integrations#other-tools"  >
+                                    Other Tools
+                                </a>
+                                </div>
+                                
+                                <br>
+                                <br>
+                                <br>
+                              </div>
+                          </div>
+
+
+                        <!-- All INtegration Section with category -->
+                        <h3 class="text-capitalize razorops-blue">{{ page.category }}</h3>
+                        <div class="col-sm-9">
+                            <div class="allintegrationtools-section">
+                                <div class="allintegration-body" id="allintegration-body">
+                                    <h1 class="text-capitalize">Integrate RazorOps with {{ page.title }}</h1>
+                                    <br>   
+                                    {{ content }}
+                                </div>
+                                     
+                            </div>
+                        </div> 
+
+                        
+    
+                          
+                             
+                    </div>		
+                </div>
+              </div> 
+        </div>
+        </div>
+
+    {% include footer.html %}
+  </body>
+</html>

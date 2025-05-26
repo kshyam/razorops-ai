@@ -1,0 +1,878 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI/ML-powered Kubernetes Performance & Cost Optimization Platform">
+  <title>RazorOps – Smarter Kubernetes Optimization</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Cloud Agnostic CICD Automation Platform | Razorops</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Cloud Agnostic CICD Automation Platform" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Razorops is a Cloud Agnostic DevOps Automation Platform to automate testing and deployment across the environments in few steps." />
+<meta property="og:description" content="Razorops is a Cloud Agnostic DevOps Automation Platform to automate testing and deployment across the environments in few steps." />
+<link rel="canonical" href="https://razorops.com" />
+<meta property="og:url" content="https://razorops.com" />
+<meta property="og:site_name" content="Razorops" />
+<meta property="og:image" content="http://localhost:4000/images/home/container-native-cicd.webp" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/images/home/container-native-cicd.webp" />
+<meta property="twitter:title" content="Cloud Agnostic CICD Automation Platform" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Razorops is a Cloud Agnostic DevOps Automation Platform to automate testing and deployment across the environments in few steps.","headline":"Cloud Agnostic CICD Automation Platform","image":"http://localhost:4000/images/home/container-native-cicd.webp","url":"https://razorops.com"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="msvalidate.01" content="7BE6D83892549154237547136EDAE30E">
+  <style>
+    .hero {
+      background: linear-gradient(120deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 100px 0;
+    }
+    .features-icon {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+    .cta-section {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+  </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+</head>
+<body>
+  <div class="banner" id="intro">
+  <div class="container">
+      <div class="banner-msg">
+        <h1 class="hero_title">Cloud Agnostic CICD Automation Platform</h1>
+        <p class="hero_text">
+          Razorops is a container native continuous integration and delivery platform to
+          automate your workflow from development to production in a few steps.
+        </p>
+
+        <div class="banner-actions">
+          <span class="getstarted-text">Signup with...</span><br><br>
+
+          <a
+            href="https://dashboard.razorops.com/users/sign_up"
+            class="btn btn-default btn-lg pr-4 mr-4"
+            >&nbsp;&nbsp;&nbsp;<img
+              src="/images/v2/github-black.svg"
+              alt="github"
+              class="btn-icon"
+            /><b>Github&nbsp;&nbsp;&nbsp;</b></a
+          >
+          <a
+            href="https://dashboard.razorops.com/users/sign_up"
+            class="btn btn-default btn-lg pr-4 mr-4"
+            ><img
+              src="/images/v2/bitbucket.svg"
+              alt="bitbucket"
+              class="btn-icon"
+            /><b>Bitbucket</b></a
+          >
+          <a
+            href="https://dashboard.razorops.com/users/sign_up"
+            class="btn btn-default btn-lg pr-4 mr-4"
+            >&nbsp;&nbsp;&nbsp;&nbsp;<img
+              src="/images/v2/gitlab.svg"
+              alt="gitlab"
+              class="btn-icon"
+            /><b>Gitlab&nbsp;&nbsp;&nbsp;&nbsp;</b></a
+          >
+        </div>
+        <p class="hero_text" >Setup your pipeline less than 30 minutes...
+			</p>
+      </div>
+  </div>
+</div>
+
+<div class="razorops-ci-cd">
+  <div class="container">
+    <div class="section-header"><h2>What is Razorops CICD?</h2></div>
+    <div class="center">
+      <a class="" id="myBtn">
+        <img
+          src="images/home/razorops-demo.webp"
+          alt="razorops deployment pipeline"
+          title="razorops deployment pipeline"
+          class="thumnail-image img-responsive"
+        />
+      </a>
+      <div id="myModal" class="modalnew fade in">
+        <div class="modal-video">
+          <span class="close">&times;</span>
+          
+          <video width="100%" height="540" controls="controls" id="test-audio">
+            <source
+              src="/images/razorops-introduction.mp4"
+              type="video/mp4"
+            />
+            <source
+              src="/images/razorops-introduction.ogg"
+              type="video/ogg"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        var audio = document.getElementById("test-audio");
+
+        span.onclick = function () {
+          modal.style.display = "none";
+          audio.autoplay = false;
+          audio.pause();
+        };
+
+        btn.onclick = function () {
+          modal.style.display = "block";
+          audio.autoplay = true;
+          audio.load();
+        };
+      </script>
+    </div>
+  </div>
+</div>
+
+<div class="tag-line">
+  <div class="container center">
+    <br />
+    <div class="col-sm-4">
+      <h3><b>Smarter</b></h3>
+      <p class="lead mb-0">
+        Stop maintaining and scaling your local CI/CD infrastructure. 
+        <b>Switch to Cloud!</b>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <h3><b>Faster</b></h3>
+      <p class="lead mb-0">
+        Customizable pipeline automation speeds deployments to production. 
+        <b>Build more, wait less!</b>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <h3><b>Better</b></h3>
+      <p class="lead mb-0">
+        Build and Test better, avoid bugs before they reach your users. 
+        <b>Ship your code with confidence!</b>
+      </p>
+    </div>
+    <br />
+    <br />
+  </div>
+</div>
+
+<div class="banner-clients bg-white">
+  <div class="container">
+    <h2 class="section-header2">Trusted by 100+ engineering teams to build quality products</h2>
+    <div class="slider">
+  <div class="slide-track">
+
+    <div class="slide2">
+    <img src="/images/clients/techmahindra.webp" alt="techmahindra" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/clients/digitalocean.webp" alt="digitalocean" >
+      </div>
+
+    <div class="slide2">
+    <img src="/images/clients/wipro.webp" alt="wipro" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/tata-consultancy-services.webp" alt="tata-consultancy-services" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/Zscaler.webp" alt="Zscaler" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/SITU.svg" alt="SITU" height="50px" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/opentech.svg" alt="opentech" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/Hiringhood.webp" alt="Hiringhood" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/netfusiontechnology.webp" alt="net fusion technology" >
+    </div>
+
+    <!-- <div class="slide2">
+    <img src="/images/clients/national-statistical-office.gif" alt="national statistical office" >
+    </div> -->
+
+    <div class="slide2">
+    <img src="/images/clients/barknlounge.webp" alt="barknlounge" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/hiredgrad.webp" alt="hiredgrad" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/clients/auzmor.webp" alt="auzmor" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/clients/yaxis.webp" alt="Y AXIS" >
+    </div>
+
+
+    <div class="slide2">
+      <img src="/images/clients/trice.webp" alt="trice">
+    </div>
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/egnify.svg" alt="egnify" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/applozicbrandLogo.svg" alt="applozic" >
+    </div>
+
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/72pi.webp" alt="72pi" >
+    </div>
+
+    <!-- <div class="slide2">
+      <img src="/images/case-study-assets/leading-edtech-logo.png" alt="EdTech" >
+    </div> -->
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/nimble.webp" alt="Nimble Buying" >
+    </div>
+
+    
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="testimonials">
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-offset-1 col-sm-offset-1 col-md-10 col-sm-10'>
+        <!-- <div class="section-header"> -->
+          <!-- <h2>Join our happy customers</h2> -->
+        <!-- </div> -->
+
+        <div class="carousel slide" data-ride="carousel" id="quote-carousels">
+          <!-- Bottom Carousel Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#quote-carousels" data-slide-to="0" class="active"></li>
+            <li data-target="#quote-carousels" data-slide-to="1"></li>
+            <li data-target="#quote-carousels" data-slide-to="2"></li>
+            <li data-target="#quote-carousels" data-slide-to="3"></li>
+            <li data-target="#quote-carousels" data-slide-to="4"></li>
+            <li data-target="#quote-carousels" data-slide-to="5"></li>
+            <li data-target="#quote-carousels" data-slide-to="6"></li>
+            <li data-target="#quote-carousels" data-slide-to="7"></li>
+            <li data-target="#quote-carousels" data-slide-to="8"></li>
+          </ol>
+          <!-- Carousel Slides / Quotes -->
+          <div class="carousel-inner">
+
+            <!-- Quote 1 -->
+            <div class="item active" style="background-color: white;">
+              <div>
+                <img src="/images/clients/mavrick-yaron.webp" alt="mavrick-yaron" class="centerimg">
+                <p class="text-center testimonial-reviews">"Razorops, the most amazing asset to me and my team. Blazing fast, makes continuous development an absolute breeze!"
+                  <br>
+                  <h3 class="text-center" style="font-weight: 600;">Yaron Oren</h3>
+                  <p class="text-center"> Founder and CEO at Maverick.ai </p>
+                </p>
+                <br><br><br><br>
+              </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+              <div>
+              <img src="/images/case-study-assets/maxamtech-founder.webp" alt="maxamtech-founder" class="centerimg">
+              <p class="text-center testimonial-reviews">"Migrating to container-native DevOps practices with the help of Razorops CI/CD has been  a game-changing experience. It has helped us outperform our competitors by enhancing our speed and performance with great simplicity."
+              <br>
+              <h3 class="text-center" style="font-weight: 600;">Mr. Xerxes Mullen  </h3>
+              <p class="text-center"> Founder of  Maxamtech Digital Ventures Pvt Ltd </p>
+              </p>
+              <br><br><br><br>
+              </div>
+            </div>
+
+
+            <div class="item" style="background-color: white;">
+              <div>
+                <img src="/images/clients/surendra.webp"  alt="Surendra Tricecommunity" class="centerimg">
+                <p class="text-center testimonial-reviews">"Running up an environment to run tests is the quickest comparing to others."
+                  <br>
+                  <h3 class="text-center" style="font-weight: 600;">Surendra Ganne </h3>
+                  <p class="text-center"> Co-founder at Tricecommunity </p>
+                </p>
+                <br><br><br><br>
+              </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+              <div>
+                <img src="/images/case-study-assets/jitender-nimble-buying.webp"  alt="Jitender Sharma" class="centerimg">
+                <p class="text-center testimonial-reviews">"I can definitely say that shorter build times lead to better time utilization, which means we can ship more stuff faster!"
+                  <br>
+                  <h3 class="text-center" style="font-weight: 600;">Jitender Sharma</h3>
+                  <p class="text-center"> CTO at NimbleBuying </p>
+                </p>
+                <br><br><br><br>
+              </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/applozic-newfounder.webp" alt="Satya Krishna Ganni" class="centerimg">
+            <p class="text-center testimonial-reviews">"A quick and authentic CI/CD solution is critical. It verifies features get to our customers on the dot and bug-free."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Satya Krishna Ganni </h3>
+            <p class="text-center"> CEO of Applozic </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/72pico-founder.webp" alt="Sangeeta Raju" class="centerimg">
+            <p class="text-center testimonial-reviews">"Razorops is an essential  part of our framework it means that pushing the code to production is completely automated."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Sangeeta Raju </h3>
+            <p class="text-center"> Co-Founder of 72PI  </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/si6-founder.webp" alt="Srikanth B" class="centerimg">
+            <p class="text-center testimonial-reviews">"Razorops takes care of configuration and assets in the background, and that will liberate a lot of my time."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Srikanth B.  </h3>
+            <p class="text-center"> Founder and Director - Si6 Associates</p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/egnify-founder1.webp"  alt="Kiran Babu"  class="centerimg">
+            <p class="text-center testimonial-reviews">"We are very happy with Razorops, we can now focus on our goal without worrying about trivial matters. Choosing Razorops was the right choice."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Kiran Babu   </h3>
+            <p class="text-center"> Founder and CEO of Egnify  </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/hiredgrad-krishna.webp" alt="Krishna V " class="centerimg">
+            <p class="text-center testimonial-reviews">"Razorops was the first CI/CD, I was actually able to get working with. I can rely on the Razorops team - they deliver!"
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Krishna V  </h3>
+            <p class="text-center"> Co Founder at HiredGrad </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+
+            
+
+            </div>
+
+          <!-- Carousel Buttons Next/Prev -->
+          <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+          <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class=" customers-banner1">
+	<div class="section-header">
+	  <h2>RazorOps incubation and community</h2>
+	</div>
+  
+	<div class="container">
+	  <br><br><br>
+	  <div class="row ">
+		<img src="/images/home/t-hub-hyderabad.webp" class="razorops-do-img" alt="nasscom" />
+		<img src="/images/home/nasscom-logo.webp" class="razorops-do-img" alt="nasscom" />
+		<img src="/images/home/nasscom-CCoE-logo.webp" class="razorops-do-img" alt="nasscom" />
+		<img src="/images/home/nasscom-dsci.webp" class="razorops-do-img" alt="nasscom" />
+		<br><br>
+	  </div>
+	</div>
+  </div>
+  
+  
+ 
+<!-- <div class="awards" id="awards">
+  <div class="section-header">
+    <h2>Awards & Certificates</h2>
+  </div>
+
+  <div class="container">
+    <br /><br /><br />
+    <div class="row img-align">
+      <center>
+        <div class="col-sm-4">
+          <a
+            href="https://reviews.financesonline.com/p/razorops/"
+            target="_blank"
+          >
+            <img
+              src="/images/risingstar-2019.webp"
+              alt="razorops awards risingstar"
+              style="display: block; max-width: 100%; height: 220px;"
+            />
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://www.softwaresuggest.com/razorops" target="_blank">
+            <img
+              src="/images/Rising-Star-2022.png"
+              alt="rising star 2022"
+              style="display: block; max-width: 100%; height: 250px;"
+              />
+          </a>
+        </div>
+        <div class="col-sm-4">
+          <a
+            href="https://reviews.financesonline.com/p/razorops/"
+            target="_blank"
+          >
+            <img
+              src="/images/premium-usability-2019.webp"
+              alt="premium usability"
+              style="display: block; max-width: 100%; height: 220px;"
+              />
+          </a>
+        </div>
+      </center>
+    </div>
+  </div>
+</div>
+ -->
+<div class="section-header">
+    <h2>CICD Leader Matrix</h2>
+</div>
+<div class="container img-align mt-60">
+    <div class="col-sm-6">
+        <a href="https://www.g2.com/products/razorops/details" target="_blank">
+            <img src="/images/g2-crowd-razorops.webp" alt="g2 crowd" class="img-responsive" />
+        </a>
+    </div>
+    <div class="col-sm-6">
+        <!-- <a href="https://www.softwaresuggest.com/continuous-integration-tools" target="_blank"> -->
+        <a href="https://www.softwaresuggest.com/continuous-integration-tools#leader_matrix" target="_blank">
+            <img src="/images/leader-matrix-continuous-integration.webp" alt="leader matrix" class="img-responsive" />
+        </a>
+    </div>
+</div>
+
+<div class="section-header mt-60"><h2>Latest Use Cases</h2></div>
+<!-- -------------------all case studies------------------ -->
+<section class="section2 res-case-study ">
+  <div class="container pt-5">
+    
+    <div class="blog-section">
+    <div class="row">
+      
+      <div class="col-sm-4 ">
+          <a href="/case-studies/maxamtech" class="text-decoration-none">
+        <div class="card-border_lightblue d-flex flex-column" >
+        
+          <img
+            src="/images/case-study-assets/maxamtech.webp"
+            alt="QuikREasy"
+            class="card-image"
+          />
+         
+          <div class="flex-grow-1 d-flex flex-column justify-content-between">
+          <div>
+            <h3 class="text-dark font-20 mt-4 mb-3">
+            CI/CD Case Study for Maxamtech Digital Ventures 
+            </h3>
+            <p class="text-light-primary">
+            Maxamtech Digital Ventures specializes in helping both online and offline gaming businesses acquire new users and maximize engagement, retention, and monetization...
+            </p>
+          </div>
+          </div>
+        </div>
+        </a>
+        </div>
+      
+      <div class="col-sm-4">
+      <a href="/case-studies/applozic" class="text-decoration-none"> 
+      <div class="card-border_lightblue d-flex flex-column"  >
+    
+        <img
+        src="/images/case-study-assets/applozicbrandLogo.svg"
+        alt="QuikREasy"
+        class="card-image"
+        />
+      
+      <div class="flex-grow-1 d-flex flex-column justify-content-between">
+        <div>
+        <h3 class="text-dark font-20 mt-4 mb-3">
+          Applozic uses Razorops to focus on fast delivery without any compromises
+        </h3>
+        <p class="text-light-primary">
+          Applozic is a Real-Time Chat and Messaging API for Developers which makes communication easy from both the web...
+        </p>
+        </div>
+      </div>
+      </div>
+      </a>
+    </div>
+
+
+      <div class="col-sm-4">
+      <a href="/case-studies/72pi" class="text-decoration-none">
+      <div class="card-border_lightblue d-flex flex-column" >
+        <br>
+        <br>
+        <img
+        src="/images/case-study-assets/72pi.webp"
+        alt="QuikREasy"
+        class="card-image2"
+        />
+      
+      <div class="flex-grow-1 d-flex flex-column justify-content-between">
+        <div>
+        <h3 class="text-dark font-20 mt-4 mb-3">
+          CI/CD Case Study for FinTech Startup
+        </h3>
+        <p class="text-light-primary">
+          72pi is an all in one platform that enables you to compare and adjust your portfolios based on various parameters and complement your investment process...
+        </p>
+        </div>
+      </div>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+<div class="section-header"><h2>Latest Blog Articles</h2></div>
+
+
+  <div class="container">
+    <div class="blog-wraper">
+      <div class="blog-post">
+        
+        
+          <a href="/blog/kubernetes-cost-efficiency-and-performance-optimization-best-practices-for-managing-your-cluster">
+            <div class="col-sm-4 post-box">
+              <div class="blog-content">
+                  <img src="/images/blog/kubernetes-cost-efficiency-and-performance-optimization.png" alt="Kubernetes Cost Efficiency and Performance Optimization: Best Practices for Managing Your Cluster"/>
+                <div class="blog-body">
+                  <time>02 Jan 2025</time>
+                  <h1>Kubernetes Cost Efficiency and Performance Optimization: Best Practices for Managing Your Cluster</h1>
+  
+                  <p class="blogs-description">we will explore Kubernetes cost efficiency and performance optimization best practices that can help you maximize the value of your Kubernetes infrastructure</p>
+                  <br>
+                  <!-- <a href="/blog/kubernetes-cost-efficiency-and-performance-optimization-best-practices-for-managing-your-cluster" class="blog-read-more">Read More</a> -->
+                </div>
+              </div>
+            </div>
+          </a>
+        
+          <a href="/blog/aws-step-functions/">
+            <div class="col-sm-4 post-box">
+              <div class="blog-content">
+                  <img src="/images/blog/aws-step-functions.webp" alt="AWS Step Functions "/>
+                <div class="blog-body">
+                  <time>24 Dec 2024</time>
+                  <h1>AWS Step Functions </h1>
+  
+                  <p class="blogs-description">Step functions allow developers to offload application orchestration into fully managed AWS services. </p>
+                  <br>
+                  <!-- <a href="/blog/aws-step-functions/" class="blog-read-more">Read More</a> -->
+                </div>
+              </div>
+            </div>
+          </a>
+        
+          <a href="/blog/amazon-simple-queue-service-sqs/">
+            <div class="col-sm-4 post-box">
+              <div class="blog-content">
+                  <img src="/images/blog/amazon-simple-queue-service-sqs.webp" alt="Amazon Simple Queue Service (SQS)"/>
+                <div class="blog-body">
+                  <time>23 Dec 2024</time>
+                  <h1>Amazon Simple Queue Service (SQS)</h1>
+  
+                  <p class="blogs-description">Amazon Simple Queue Service (SQS) is a serverless service used to decouple (loose couple) serverless applications and components.</p>
+                  <br>
+                  <!-- <a href="/blog/amazon-simple-queue-service-sqs/" class="blog-read-more">Read More</a> -->
+                </div>
+              </div>
+            </div>
+          </a>
+        
+        <div class="clearfix"></div>
+        <br>
+        <center>
+          <a href="/blog" title="Read More" class="btn-animated btn btn-lg full-rounded">Read More</a>
+        </center>
+      </div>
+    </div>
+  </div>
+
+
+<div class="section-header mt-60">
+  <h2>Latest Newsletters</h2>
+</div>
+<div class="container container-center">
+  <div class="blog-wraper2">
+    <div class="blog-post">
+       
+      <a href="/newsletter/razorops-cicd-newsletter-94">
+        <div class="col-sm-4 post-box">
+          <div class="blog-content">
+            <img src="/images/blog/kubernetes-and-devops-the-perfect-duo-for-cloud-native-development.webp" />
+            <div class="blog-body">
+              <!-- <time class="pull-right">02 Nov 2024</time> -->
+              <h1>Container Native DevOps & CICD Newsletter 94</h1>
+              <p class="blogs-description">Kubernetes and DevOps The Perfect Duo for Cloud-Native Development</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="/newsletter/razorops-cicd-newsletter-93">
+        <div class="col-sm-4 post-box">
+          <div class="blog-content">
+            <img src="/images/blog/scaling-with-terraform-optimizing-multi-cloud-deployments-1-.gif" />
+            <div class="blog-body">
+              <!-- <time class="pull-right">01 Sep 2024</time> -->
+              <h1>Container Native DevOps & CICD Newsletter 93</h1>
+              <p class="blogs-description">Scaling with Terraform Optimizing Multi-Cloud Deployments</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+      <a href="/newsletter/razorops-cicd-newsletter-92">
+        <div class="col-sm-4 post-box">
+          <div class="blog-content">
+            <img src="/images/blog/cicd-pipelines-optimizing-the-devops-workflow.webp" />
+            <div class="blog-body">
+              <!-- <time class="pull-right">10 Jul 2024</time> -->
+              <h1>Container Native DevOps & CICD Newsletter 92</h1>
+              <p class="blogs-description">CI/CD Pipelines Optimizing the DevOps Workflow</p>
+            </div>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <center>
+    <a class="m-5 btn btn-lg linkdin-blue full-rounded p-10" href="/newsletter">Explore More</a>
+    </center>
+  </div>
+</div>
+<div class="mb-10"></div>
+<br> 
+
+<!-- <div class="section-header mt-60"><h2>Try RazorOps at Azure Cloud </h2></div>
+<div class="customers-banner do-banner-home-pd" style="margin-top: -20px;">
+    <img src="/images/v2/razorops-white-logo.png" class="razorops-do-img" alt="razorops Microsoft">
+    <span class="razorops-plus-img">+</span>
+    <p class="plus-adding">+</p>
+    <img src="/images/azure-microsoft.png" class="razorops-do-img2" alt="Microsoft startup">
+    <h2 class="do-rointro">Try Razorops CI/CD and get $150k Credits over Microsoft Azure</h2>
+    <br><br>
+    <p>PRETTY CONVINCING, RIGHT?</p>
+    <h2>Ready to <b>get started?</b></h2>
+    <br><br>
+    <a class="btn btn-default btn-lg btn-rounded mr-4" href="/try-razorops-cicd-with-microsoft-azure-kubernetes/"> Apply
+        Now</a>
+</div> -->
+
+<!-- 
+<div class="section-header mt-60"><h2>Try RazorOps at Digital Ocean </h2></div>
+<div class="customers-banner mt-10 do-banner-home-pd">
+    <img src="/images/v2/razorops-white-logo.png" class="razorops-do-img" alt="digitalocean-razorops">
+    <span class="razorops-plus-img">+</span>
+    <p class="plus-adding">+</p>
+    <img src="/images/digitalocean-razorops.png" class="razorops-do-img2" alt="digitalocean free Credits">
+    <h2 class="do-rointro">Try Razorops CI/CD and get $250 Credits over Digital Ocean</h2>
+    <br><br>
+    <p>PRETTY CONVINCING, RIGHT?</p>
+    <h2>Ready to <b>get started?</b></h2>
+    <br><br>
+    <a class="btn btn-default btn-lg btn-rounded mr-4" href="/try-razorops-cicd-with-digital-ocean-kubernetes/"> Apply
+        Now</a>
+</div> -->
+
+
+      <!-- <div class="col-sm-12">
+        <p><b><a href="/blog/core-ci-cd-concepts-a-comprehensive-overview">Core CI/CD Concepts</a> : </b>
+        Continuous Integration (CI) |
+        Continuous Delivery (CD) |
+        Continuous Deployment |
+        Pipeline Automation |
+        Build Automation |
+        Deployment Automation |
+        DevOps Automation |
+        Infrastructure as Code (IaC) |
+        Container Orchestration |
+        Microservices 
+        </p>
+
+        <p><b><a href="/blog/testing-and-quality-assurance-within-a-ci-cd-pipeline">Testing and Quality</a> : </b>
+        Automated Testing |
+        Static Code Analysis (SCA) |
+        Test Automation |
+        Code Quality Analysis |
+        Integration Testing |
+        Performance Testing |
+        Security Automation (DevSecOps) |
+        Code Linting |
+        Test Coverage Analysis |
+        </p>
+
+        <p><b>Deployment Strategies : </b>
+
+        Blue-Green Deployment |
+        Canary Deployment |
+        Feature Flag Management |
+        Automated Rollbacks
+        </p>
+
+        <p><b>Infrastructure and Environment Management : </b>
+
+        Configuration Management |
+        Environment Provisioning |
+        Self-Healing Infrastructure |
+        Immutable Infrastructure |
+        Scalability |
+        High Availability |
+        Cloud Integration |
+        Serverless CI/CD |
+        GitOps
+        </p>
+
+        <p><b>Monitoring and Observability : </b>
+
+        Monitoring and Logging |
+        Application Performance Monitoring (APM) |
+        Telemetry Data |
+        Real-Time Monitoring |
+        Latency Monitoring |
+        Distributed Tracing |
+        Operational Dashboards
+        </p>
+
+        <p><b>Security and Compliance : </b>
+
+        Secrets Management |
+        Security Scanning |
+        Vulnerability Scanning |
+        Compliance Automation |
+        Data Encryption |
+        Role-Based Access Control (RBAC) |
+        Identity and Access Management (IAM) |
+        Zero Trust Security |
+        Policy Enforcement
+        </p>
+        <p><b>DevOps Practices and Culture : </b>
+
+        DevOps Culture |
+        CI/CD Best Practices |
+        Shift Left Testing |
+        Continuous Feedback
+        </p>
+        <p><b>Other Key Concepts : </b>
+
+        Pipeline as Code |
+        Immutable Infrastructure as Code |
+        Environment Isolation |
+        Environment Replication |
+        Resource Management |
+        Auto-scaling |
+        Cluster Management
+        </p>
+        <br>
+        <hr>
+        <br>
+        <br>
+      </div> -->
+
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 RazorOps. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

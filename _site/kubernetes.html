@@ -1,0 +1,1592 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI/ML-powered Kubernetes Performance & Cost Optimization Platform">
+  <title>RazorOps – Smarter Kubernetes Optimization</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Kubernetes, Kubernetes docker | Razorops</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Kubernetes, Kubernetes docker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Kubernetes in a simple term is a system for running and coordinating containerized applications across a collection of machines." />
+<meta property="og:description" content="Kubernetes in a simple term is a system for running and coordinating containerized applications across a collection of machines." />
+<link rel="canonical" href="https://razorops.com/" />
+<meta property="og:url" content="https://razorops.com/" />
+<meta property="og:site_name" content="Razorops" />
+<meta property="og:image" content="http://localhost:4000/images/blog/razorops-one-repo.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/images/blog/razorops-one-repo.png" />
+<meta property="twitter:title" content="Kubernetes, Kubernetes docker" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Kubernetes in a simple term is a system for running and coordinating containerized applications across a collection of machines.","headline":"Kubernetes, Kubernetes docker","image":"http://localhost:4000/images/blog/razorops-one-repo.png","url":"https://razorops.com/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="msvalidate.01" content="7BE6D83892549154237547136EDAE30E">
+  <style>
+    .hero {
+      background: linear-gradient(120deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 100px 0;
+    }
+    .features-icon {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+    .cta-section {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+  </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+</head>
+<body>
+  <div class="banner" id="intro">
+  <div class="container">
+    <div class="banner-msg">
+      <h1 class="hero_title">Continuous delivery simplified on Kubernetes</h1>
+      <p class="hero_text">Automate your code to test to production across environments, apps in few steps.</p>
+
+      <div class="banner-actions">
+        <a href="https://dashboard.razorops.com/users/sign_up" class="btn btn-default btn-lg pr-4 pl-4 mr-4" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> GET STARTED </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        <a href="https://docs.razorops.com/introduction/overview.html" target="-_blank" class="doc-link"><b>DOCUMENTATION</b> </a>
+      </div>
+
+    </div>
+
+    <div class="banner-illustration">
+      <img src="/images/kubernetes.svg" alt="kubernetes" style="margin-top: 100px;">
+    </div>
+  </div>
+
+  <!-- <div class="client-logo-wraper">
+    <div class="client-logo-item client-logo-item-1">
+      <img src="/images/client-logos/yaxis.png" alt="">
+    </div>
+    <div class="client-logo-item client-logo-item-2">
+      <img src="/images/client-logos/auzmor.png" alt="">
+    </div>
+    <div class="client-logo-item client-logo-item-3">
+      <img src="/images/client-logos/1dossier.png" alt="">
+    </div>
+    <div class="client-logo-item client-logo-item-4">
+      <img src="/images/client-logos/dbmtgroup.png" alt="">
+    </div>
+    <div class="client-logo-item client-logo-item-5">
+        <img src="/images/client-logos/railsroot.png" alt="">
+      </div>
+    <div class="client-logo-item client-logo-item-6">
+      <img src="/images/client-logos/trice.png" alt="">
+    </div>
+  </div> -->
+
+</div>
+
+<div class="razorops-ci-cd">
+  <div class="container">
+      <div class="section-header"><h2>Razorops makes it easy</h2></div>
+      <div class="center">
+        <img src="/images/v2/kubernetes-cd.png" alt="razorops deployment pipeline" title="razorops deployment pipeline" class="img-responsive">
+      </div>
+  </div>
+</div>
+
+
+<div class="banner-clients bg-white">
+  <div class="container">
+    <h2 class="section-header2">Trusted by 100+ engineering teams to build quality products</h2>
+    <div class="slider">
+  <div class="slide-track">
+
+    <div class="slide2">
+    <img src="/images/clients/techmahindra.webp" alt="techmahindra" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/clients/digitalocean.webp" alt="digitalocean" >
+      </div>
+
+    <div class="slide2">
+    <img src="/images/clients/wipro.webp" alt="wipro" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/tata-consultancy-services.webp" alt="tata-consultancy-services" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/Zscaler.webp" alt="Zscaler" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/SITU.svg" alt="SITU" height="50px" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/opentech.svg" alt="opentech" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/Hiringhood.webp" alt="Hiringhood" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/netfusiontechnology.webp" alt="net fusion technology" >
+    </div>
+
+    <!-- <div class="slide2">
+    <img src="/images/clients/national-statistical-office.gif" alt="national statistical office" >
+    </div> -->
+
+    <div class="slide2">
+    <img src="/images/clients/barknlounge.webp" alt="barknlounge" >
+    </div>
+
+    <div class="slide2">
+    <img src="/images/clients/hiredgrad.webp" alt="hiredgrad" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/clients/auzmor.webp" alt="auzmor" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/clients/yaxis.webp" alt="Y AXIS" >
+    </div>
+
+
+    <div class="slide2">
+      <img src="/images/clients/trice.webp" alt="trice">
+    </div>
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/egnify.svg" alt="egnify" >
+    </div>
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/applozicbrandLogo.svg" alt="applozic" >
+    </div>
+
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/72pi.webp" alt="72pi" >
+    </div>
+
+    <!-- <div class="slide2">
+      <img src="/images/case-study-assets/leading-edtech-logo.png" alt="EdTech" >
+    </div> -->
+
+    <div class="slide2">
+      <img src="/images/case-study-assets/nimble.webp" alt="Nimble Buying" >
+    </div>
+
+    
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="testimonials">
+  <div class="container">
+    <div class='row'>
+      <div class='col-md-offset-1 col-sm-offset-1 col-md-10 col-sm-10'>
+        <!-- <div class="section-header"> -->
+          <!-- <h2>Join our happy customers</h2> -->
+        <!-- </div> -->
+
+        <div class="carousel slide" data-ride="carousel" id="quote-carousels">
+          <!-- Bottom Carousel Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#quote-carousels" data-slide-to="0" class="active"></li>
+            <li data-target="#quote-carousels" data-slide-to="1"></li>
+            <li data-target="#quote-carousels" data-slide-to="2"></li>
+            <li data-target="#quote-carousels" data-slide-to="3"></li>
+            <li data-target="#quote-carousels" data-slide-to="4"></li>
+            <li data-target="#quote-carousels" data-slide-to="5"></li>
+            <li data-target="#quote-carousels" data-slide-to="6"></li>
+            <li data-target="#quote-carousels" data-slide-to="7"></li>
+            <li data-target="#quote-carousels" data-slide-to="8"></li>
+          </ol>
+          <!-- Carousel Slides / Quotes -->
+          <div class="carousel-inner">
+
+            <!-- Quote 1 -->
+            <div class="item active" style="background-color: white;">
+              <div>
+                <img src="/images/clients/mavrick-yaron.webp" alt="mavrick-yaron" class="centerimg">
+                <p class="text-center testimonial-reviews">"Razorops, the most amazing asset to me and my team. Blazing fast, makes continuous development an absolute breeze!"
+                  <br>
+                  <h3 class="text-center" style="font-weight: 600;">Yaron Oren</h3>
+                  <p class="text-center"> Founder and CEO at Maverick.ai </p>
+                </p>
+                <br><br><br><br>
+              </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+              <div>
+              <img src="/images/case-study-assets/maxamtech-founder.webp" alt="maxamtech-founder" class="centerimg">
+              <p class="text-center testimonial-reviews">"Migrating to container-native DevOps practices with the help of Razorops CI/CD has been  a game-changing experience. It has helped us outperform our competitors by enhancing our speed and performance with great simplicity."
+              <br>
+              <h3 class="text-center" style="font-weight: 600;">Mr. Xerxes Mullen  </h3>
+              <p class="text-center"> Founder of  Maxamtech Digital Ventures Pvt Ltd </p>
+              </p>
+              <br><br><br><br>
+              </div>
+            </div>
+
+
+            <div class="item" style="background-color: white;">
+              <div>
+                <img src="/images/clients/surendra.webp"  alt="Surendra Tricecommunity" class="centerimg">
+                <p class="text-center testimonial-reviews">"Running up an environment to run tests is the quickest comparing to others."
+                  <br>
+                  <h3 class="text-center" style="font-weight: 600;">Surendra Ganne </h3>
+                  <p class="text-center"> Co-founder at Tricecommunity </p>
+                </p>
+                <br><br><br><br>
+              </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+              <div>
+                <img src="/images/case-study-assets/jitender-nimble-buying.webp"  alt="Jitender Sharma" class="centerimg">
+                <p class="text-center testimonial-reviews">"I can definitely say that shorter build times lead to better time utilization, which means we can ship more stuff faster!"
+                  <br>
+                  <h3 class="text-center" style="font-weight: 600;">Jitender Sharma</h3>
+                  <p class="text-center"> CTO at NimbleBuying </p>
+                </p>
+                <br><br><br><br>
+              </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/applozic-newfounder.webp" alt="Satya Krishna Ganni" class="centerimg">
+            <p class="text-center testimonial-reviews">"A quick and authentic CI/CD solution is critical. It verifies features get to our customers on the dot and bug-free."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Satya Krishna Ganni </h3>
+            <p class="text-center"> CEO of Applozic </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/72pico-founder.webp" alt="Sangeeta Raju" class="centerimg">
+            <p class="text-center testimonial-reviews">"Razorops is an essential  part of our framework it means that pushing the code to production is completely automated."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Sangeeta Raju </h3>
+            <p class="text-center"> Co-Founder of 72PI  </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/si6-founder.webp" alt="Srikanth B" class="centerimg">
+            <p class="text-center testimonial-reviews">"Razorops takes care of configuration and assets in the background, and that will liberate a lot of my time."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Srikanth B.  </h3>
+            <p class="text-center"> Founder and Director - Si6 Associates</p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/egnify-founder1.webp"  alt="Kiran Babu"  class="centerimg">
+            <p class="text-center testimonial-reviews">"We are very happy with Razorops, we can now focus on our goal without worrying about trivial matters. Choosing Razorops was the right choice."
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Kiran Babu   </h3>
+            <p class="text-center"> Founder and CEO of Egnify  </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+            <div class="item" style="background-color: white;">
+            <div>
+            <img src="/images/clients/hiredgrad-krishna.webp" alt="Krishna V " class="centerimg">
+            <p class="text-center testimonial-reviews">"Razorops was the first CI/CD, I was actually able to get working with. I can rely on the Razorops team - they deliver!"
+            <br>
+            <h3 class="text-center" style="font-weight: 600;">Krishna V  </h3>
+            <p class="text-center"> Co Founder at HiredGrad </p>
+            </p>
+            <br><br><br><br>
+            </div>
+            </div>
+
+
+            
+
+            </div>
+
+          <!-- Carousel Buttons Next/Prev -->
+          <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+          <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="home-feature" id="features">
+	<br><br>
+	<div class="section-header"><h2>RazorOps Features</h2></div>
+	<br>
+
+
+	<style>
+		.card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #EFEFEF;
+      border-radius: 10px;
+      padding: 10px;
+			height: 370px;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      border: 1px solid #EFEFEF;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+
+  </style>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-4">
+				<div class="card">
+					<center>
+						<img src="/images/v2/container-native.webp" alt="source code management" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+					<h3>Container Native</h3>
+					<p class="lead mb-0">Software that treats the container as the first-class unit of infrastructure. RazorOps gives a fresh isolated environment for every step in your pipeline.</p>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<center>
+						<img src="/images/v2/connect-environments.webp" alt="Connect Environments" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+					<h3>Connect Environments</h3>
+					<p class="lead mb-0">Create new <a href="https://kubernetes.io" target="_blank">Kubernetes</a> clusters on any server or cloud no matter where they run. Integrate and promote builds across multiple environments according to your needs (development, staging and more).</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<center>
+						<img src="/images/v2/pipeline.webp" alt="source code management" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+					<h3>Deployment Pipeline</h3>
+					<p class="lead mb-0">Manage your entire pipeline visually or put inside your codebase. No scripts, delays and downtime.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+			<br>
+			<br>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<center>
+						<img src="/images/v2/rollback.webp" alt="source code management" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+						<h3>Automatic rollback</h3>
+						<p class="lead mb-0">We analyze data from monitoring tools and uses automated testing tools to look for anomalies and failures to rollback broken within seconds.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+
+					<center>
+						<img src="/images/v2/gitops.webp" alt="Connect Environments" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+						<h3>Incorporate GitOps</h3>
+						<p class="lead mb-0">Align your pipelines with the branch structure, making it easier to work with branching workflows like feature branching or git-flow.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+
+					<center>
+						<!-- <img src="/images/v2/code-as-config.svg" alt="Code as configuration" class="feature-img"> -->
+						<img src="/images/v2/code-as-configuration.webp" alt="Code as configuration" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+						<h3>Code as configuration</h3>
+						<p class="lead mb-0">Store and manage your configurations in a single <a href="https://docs.razorops.com/configuration/reference.html" target="_blank"> .razorops.yaml</a> file. Only few lines of code to get you started.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div><br><br>
+			<div class="col-sm-4">
+				<div class="card">
+
+					<center>
+						<img src="/images/v2/git.webp" alt="source code management" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+					<h3>Git as Source Code</h3>
+					<p class="lead mb-0">RazorOps integrates well with top git based source code management systems like GitHub, Bitbucket, and GitLab.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+
+					<center>
+						<img src="/images/v2/language-agnostic.webp" alt="language agnostic" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+						<h3>Language Agnostic</h3>
+						<p class="lead mb-0">RazorOps is language agnostic, it works with any language or service that runs inside a Docker container. You can choose public docker images or use your private images.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+
+					<center>
+						<img src="/images/v2/platform-independent.webp" alt="Platform Independent" class="feature-img img-responsive">
+					</center>
+					<div class="platform-integration-msg">
+						<h3>Platform Independent</h3>
+						<p class="lead mb-0">RazorOps is a cloud based SAAS product, it's a zero installation, quick start platform, you can build your apps for any platform AWS, GCP, Azure, iOS, Android, ReactNative etc.</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+
+
+
+<!-- <svg xmlns="https://www.w3.org/2000/svg" class="curve-container__curve curve-one" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68"><path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" fill="#f3f5f9" transform="translate(0-1977)"></path></svg> -->
+<br>
+<br>
+<div class="home-deployment" id="integrations">
+  <center><h2 style="font-size: 42px;" class="section-header">RazorOps as Platform</h2></center>
+  <br><br><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+          <div class="card">
+          <center>
+            <img src="/images/v2/migrating.webp" alt="source code management" class="feature-img img-responsive">
+          </center>
+          <div class="platform-integration-msg">
+          <h3>SaaS Platform</h3>
+          <p class="lead mb-0">We provide secured, managed and highly-available infrastructure for our SaaS Solution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+
+          <center>
+            <img src="/images/v2/application.webp" alt="language agnostic" class="feature-img img-responsive">
+          </center>
+          <div class="platform-integration-msg">
+            <h3>Hybrid Solution</h3>
+            <p class="lead mb-0">Run builds on your infrastructure, and use RazorOps UI on our infrastructure.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+
+          <center>
+            <img src="/images/v2/private.webp" alt="Platform Independent" class="feature-img img-responsive">
+          </center>
+          <div class="platform-integration-msg">
+            <h3>On Prem Self-hosted</h3>
+            <p class="lead mb-0">Run the full RazorOps stack on your own infrastructure.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+
+<br>
+<br>
+<br>
+
+ <div class="Integration-container">
+	<div class="content-wraper">
+		<div class="blog-wraper">
+			  <div class="">
+				<div class="row"> 
+
+					<!-- Integration tool Menu BY Categories -->
+
+					<div class="col-md-3 integration-menu">
+						<div class="container">
+							
+							
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#scm"  >
+								SCM
+							</a>	
+							</div>
+							
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#build-tools"  >
+								Build Tools
+							</a>	
+							</div>
+							
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#unit-testing-tools"  >
+								Unit Testing Tools
+							</a>
+							</div>
+							
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#test-coverage-report-tools"   >
+								Test Coverage Tools
+							</a>
+							</div>
+
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#container-registries" >
+								Container Registries
+							</a>
+							</div>
+
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#development-tools"   >
+								Kubernetes
+							</a>
+							</div>
+
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#other-tools"  >
+								Other Tools
+							</a>
+							</div>
+							
+							<br>
+							<br>
+							<br>
+						  </div>
+					  </div>
+
+					  <!-- All INtegration Section with category -->
+
+						<div class="col-sm-9">
+							<div class="allintegrationtools-section">
+								<div class="allintegration-body" id="scm">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											SCM
+										</h2>
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="https://docs.razorops.com/account/create-pipeline/#when-authenticated-with-gitlab" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/gitlab-logo.webp" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> gitlab</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														
+														<a href="https://docs.razorops.com/account/create-pipeline/#when-authenticated-with-github" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/v2/github-black.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> github</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="https://docs.razorops.com/account/create-pipeline/#when-authenticated-with-bitbucket" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/bitbucket-integration.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> bitbucket</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+												
+									</div>
+								</div>
+								
+								
+								<div class="allintegration-body" id="build-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Build Tools
+										</h2>
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/maven" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/maven-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> maven</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/gulp" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/gulp-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> Gulp</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														
+														<a href="/integration/grunt" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/grunt-logo.svg" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> grunt</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+												
+									</div>
+								</div>
+
+
+								<div class="allintegration-body" id="unit-testing-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Unit Testing Tools
+										</h2>
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/gitlab" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/gitlab-logo.webp" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> gitlab</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														
+														<a href="/integration/github" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/v2/github-black.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> github</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/bitbucket" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/bitbucket-integration.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> bitbucket</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+												
+									</div>
+								</div>
+
+
+								<div class="allintegration-body" id="test-coverage-report-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Test Coverage Report Tools
+										</h2>
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/junit" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/junit-logo.avif" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> junit</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+												
+									</div>
+								</div>
+								
+
+
+								<div class="allintegration-body" id="container-registries">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Container Registries
+										</h2>
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/jfrog" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/jfrog/jfrog-logo-razorops.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> Jfrog</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/harbor" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/harbor/harbor-logo-razorops.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> harbor</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+												
+									</div>
+								</div>
+								
+
+
+								<div class="allintegration-body" id="development-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Development Tools- Kubernetes
+										</h2>
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/ibm-k8s" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/IBM-kubernetes-service-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> IBM K8s</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/gke" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/GKE-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> GKE</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/eks" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/amazon_eks_logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> EKS</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/aks" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/AKS-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> AKS</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+												
+									</div>
+								</div>
+
+
+
+								<div class="allintegration-body" id="other-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Other Tools
+										</h2>
+										
+													
+														
+														<a href="/integration/terraform" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/terraform-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> terraform</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														
+														<a href="/integration/sonarqube" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/sonarqube-logo-razorops.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> Sonarqube</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/helm-chart" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/helm.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> Helm Chart</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														 
+													
+										
+													
+														
+														<a href="/integration/aqua-security" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="/images/integration/aquasecurity-logo.png" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> Aqua Security</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														 
+													
+										
+													
+														 
+													
+												
+									</div>
+								</div>
+
+
+								
+							</div>
+						</div> 
+						 
+				</div>		
+			</div>
+		  </div> 
+	</div>
+	
+	
+	
+				
+</div>			
+
+
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 RazorOps. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

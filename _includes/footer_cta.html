@@ -1,0 +1,97 @@
+<!-- Footer CTA Box -->
+<div class="footer-cta">
+    <div class="container text-center">
+    <h2>Ready to Streamline Your DevOps Pipeline?</h2>
+    <p>Experience seamless CI/CD with RazorOps. Start your free trial today and accelerate your software delivery.</p>
+    <a href="https://dashboard.razorops.com/users/sign_up" class="btn btn-lg btn-success">Start Free Trial</a>
+    </div>
+</div>
+
+<!-- Custom JS for Fade-In Animation -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const ctaBox = document.querySelector('.footer-cta');
+      ctaBox.classList.add('visible');
+  });
+</script>
+
+
+<style>
+
+  /* Footer CTA Custom Styling */
+.footer-cta {
+    background: linear-gradient(135deg, #007bff, #6610f2);
+  border: 1px solid #007bff; /* Highlight with a primary border */
+    color: #FFF;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    margin: 20px; /* Margin to create space around the CTA box */
+    opacity: 0; /* Start with hidden opacity */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation for fade-in */
+}
+
+/* Fade-in Animation on Page Load */
+.footer-cta.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Reset position */
+}
+
+/* Hover Animation */
+.footer-cta:hover {
+    transform: scale(0.9); /* Slight scaling effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.footer-cta h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.footer-cta p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+
+
+ /* CTA Box Styling */
+ .cta-box {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  border: 1px solid #007bff; /* Highlight with a primary border */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Start invisible */
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeInUp 1s ease-out forwards; /* Trigger fade-in animation */
+  transition: background 0.5s ease, box-shadow 0.3s ease;
+}
+
+.cta-box h2 {
+  color: #FFF; /* Primary color */
+  margin-bottom: 15px;
+}
+
+.cta-box p {
+  color: #FFF; /* Dark text for contrast */
+}
+
+.cta-box img{
+  width: 64px;
+}
+
+.cta-box .btn {
+  margin-top: 15px;
+}
+
+/* Hover Effect */
+.cta-box:hover {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: #fff; /* White text for contrast */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+</style>

@@ -1,0 +1,296 @@
+
+ <div class="Integration-container">
+	<div class="content-wraper">
+		<div class="blog-wraper">
+			  <div class="">
+				<div class="row"> 
+
+					<!-- Integration tool Menu BY Categories -->
+
+					<div class="col-md-3 integration-menu">
+						<div class="container">
+							
+							{% assign integrationtool = site.integration %}
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#scm"  >
+								SCM
+							</a>	
+							</div>
+							
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#build-tools"  >
+								Build Tools
+							</a>	
+							</div>
+							
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#unit-testing-tools"  >
+								Unit Testing Tools
+							</a>
+							</div>
+							
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#test-coverage-report-tools"   >
+								Test Coverage Tools
+							</a>
+							</div>
+
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#container-registries" >
+								Container Registries
+							</a>
+							</div>
+
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#development-tools"   >
+								Kubernetes
+							</a>
+							</div>
+
+							<br>
+							<br>
+							<div class="menubtn-box">
+							<a class="btn menu-btn"  href="#other-tools"  >
+								Other Tools
+							</a>
+							</div>
+							
+							<br>
+							<br>
+							<br>
+						  </div>
+					  </div>
+
+					  <!-- All INtegration Section with category -->
+
+						<div class="col-sm-9">
+							<div class="allintegrationtools-section">
+								<div class="allintegration-body" id="scm">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											SCM
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'scm' %}
+														<a href="{{ post.link }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+								
+								
+								<div class="allintegration-body" id="build-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Build Tools
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'build tools' %}
+														<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+
+
+								<div class="allintegration-body" id="unit-testing-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Unit Testing Tools
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'scm' %}
+														<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+
+
+								<div class="allintegration-body" id="test-coverage-report-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Test Coverage Report Tools
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'test coverage report tools' %}
+														<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+								
+
+
+								<div class="allintegration-body" id="container-registries">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Container Registries
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'container registries' %}
+														<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+								
+
+
+								<div class="allintegration-body" id="development-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Development Tools- Kubernetes
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'development tools' %}
+														<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+
+
+
+								<div class="allintegration-body" id="other-tools">
+									<div class="singleintegration-section row">
+										<h2 class="integrationtool-heading">
+											Other Tools
+										</h2>
+										{% for post in integrationtool reversed %}
+													{% for category in post.category %}
+														{% if category == 'other tools' %}
+														<a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none" target="_blank">
+															
+																<h4 class="text-capitalize text-15"> </h4>
+																<div class="integrationtool-box col-sm-4">
+																	<div class="integrationtool-content row">
+																		<div class="integrationtool-logo col-sm-3">
+																			<img src="{{ post.logo }}" width="50px" height="50px">
+																		</div>
+																		<div class="integrationtool-name col-md-9">
+																			<h3 class="text-capitalize"> {{ post.title }}</h3>
+																		</div>
+																	</div>
+																</div>											
+														</a>
+														{% endif %} 
+													{% endfor %}
+										{% endfor %}		
+									</div>
+								</div>
+
+
+								
+							</div>
+						</div> 
+						 
+				</div>		
+			</div>
+		  </div> 
+	</div>
+	
+	
+	
+				
+</div>			

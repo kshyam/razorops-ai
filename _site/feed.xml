@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-05-26T17:14:06+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">Razorops</title><subtitle>Cloud Agnostic CICD Automation Platform
+</subtitle><entry><title type="html">Kubernetes Cost Efficiency and Performance Optimization: Best Practices for Managing Your Cluster</title><link href="http://localhost:4000/blog/kubernetes-cost-efficiency-and-performance-optimization-best-practices-for-managing-your-cluster" rel="alternate" type="text/html" title="Kubernetes Cost Efficiency and Performance Optimization: Best Practices for Managing Your Cluster" /><published>2025-01-02T10:07:00+05:30</published><updated>2025-01-02T10:07:00+05:30</updated><id>http://localhost:4000/blog/kubernetes-cost-efficiency-and-performance-optimization-best-practices-for-managing-your-cluster</id><content type="html" xml:base="http://localhost:4000/blog/kubernetes-cost-efficiency-and-performance-optimization-best-practices-for-managing-your-cluster"><![CDATA[<p><strong>Title: Kubernetes Cost Efficiency and Performance Optimization: Best Practices for Managing Your Cluster</strong></p>
+
+<p>As organizations increasingly embrace Kubernetes for container orchestration, optimizing both cost and performance has become a critical challenge. Kubernetes, with its flexible and powerful features, allows for efficient resource management, but without proper configuration and monitoring, it can also lead to over-provisioning, wasted resources, and skyrocketing costs.</p>
+
+<p>In this blog post, we will explore Kubernetes cost efficiency and performance optimization best practices that can help you maximize the value of your Kubernetes infrastructure while reducing unnecessary expenses and improving application performance.</p>
+
+<hr />
+
+<h3 id="why-kubernetes-cost-optimization-matters"><strong>Why Kubernetes Cost Optimization Matters</strong></h3>
+
+<p>Kubernetes enables the orchestration of containers, allowing developers and operators to deploy and manage applications at scale. However, Kubernetes clusters often run on cloud environments (like AWS, Azure, or Google Cloud), where costs are directly tied to resource consumption.</p>
+
+<p>Without proactive management, Kubernetes can lead to inefficient resource allocation, unused capacity, and ultimately higher-than-necessary cloud bills. Optimizing Kubernetes for cost efficiency ensures you’re only paying for what you need, not what you don’t, while also keeping your applications running smoothly.</p>
+
+<p>Moreover, cost optimization goes hand-in-hand with performance optimization. Often, improving efficiency in how resources are utilized also leads to better application performance, such as reduced latency, faster response times, and overall improved user experiences.</p>
+
+<hr />
+
+<h3 id="key-areas-to-focus-on-for-kubernetes-cost-efficiency-and-performance-optimization"><strong>Key Areas to Focus On for Kubernetes Cost Efficiency and Performance Optimization</strong></h3>
+
+<p>To optimize Kubernetes cost and performance, there are several key areas that need attention. Let’s break them down:</p>
+
+<hr />
+
+<h3 id="1-resource-requests-and-limits-fine-tuning-for-efficiency"><strong>1. Resource Requests and Limits: Fine-Tuning for Efficiency</strong></h3>
+
+<p>One of the most important ways to control Kubernetes costs is by setting proper resource requests and limits for your containers.</p>
+
+<ul>
+  <li><strong>Resource Requests</strong> define the amount of CPU and memory that Kubernetes will allocate to a container.</li>
+  <li><strong>Resource Limits</strong> specify the maximum CPU and memory a container can use.</li>
+</ul>
+
+<p>By configuring these parameters correctly, you prevent over-allocating resources, which can lead to unnecessary costs, while ensuring that containers receive sufficient resources to perform well.</p>
+
+<h4 id="best-practices-for-resource-requests-and-limits"><strong>Best Practices for Resource Requests and Limits:</strong></h4>
+<ul>
+  <li>Set <strong>reasonable resource requests</strong>: Avoid setting resource requests too high, as it can result in underutilized nodes and wasted resources.</li>
+  <li>Define <strong>resource limits</strong>: This prevents containers from consuming excessive resources and affecting the performance of other applications running in the same cluster.</li>
+  <li>Regularly monitor and adjust these settings based on real-time usage. Tools like <strong>Kubernetes Metrics Server</strong> and <strong>Prometheus</strong> can help provide insights into resource usage.</li>
+</ul>
+
+<hr />
+
+<h3 id="2-autoscaling-dynamic-resource-allocation-for-cost-savings"><strong>2. Autoscaling: Dynamic Resource Allocation for Cost Savings</strong></h3>
+
+<p>Kubernetes provides powerful scaling capabilities, both at the container and cluster level. Autoscaling ensures that your applications always have the right amount of resources allocated, scaling up when demand increases and scaling down when demand drops.</p>
+
+<ul>
+  <li><strong>Horizontal Pod Autoscaler (HPA)</strong> adjusts the number of pod replicas based on CPU utilization or custom metrics.</li>
+  <li><strong>Vertical Pod Autoscaler (VPA)</strong> adjusts the resource requests and limits for running pods based on usage trends.</li>
+  <li><strong>Cluster Autoscaler</strong> automatically adjusts the number of nodes in your cluster based on resource demand, ensuring you’re only paying for the capacity you need.</li>
+</ul>
+
+<h4 id="best-practices-for-autoscaling"><strong>Best Practices for Autoscaling:</strong></h4>
+<ul>
+  <li>Use <strong>HPA</strong> to automatically scale applications based on resource usage.</li>
+  <li>Combine <strong>VPA</strong> with HPA for more granular control over resource allocation.</li>
+  <li>Enable <strong>Cluster Autoscaler</strong> to automatically scale nodes in response to increased demand, ensuring that you’re only provisioning what is necessary.</li>
+</ul>
+
+<p>By leveraging autoscaling, you can optimize the resource allocation dynamically, reducing costs without sacrificing performance.</p>
+
+<hr />
+
+<h3 id="3-efficient-resource-scheduling-optimize-node-utilization"><strong>3. Efficient Resource Scheduling: Optimize Node Utilization</strong></h3>
+
+<p>Efficient scheduling is key to maximizing Kubernetes cluster performance and minimizing costs. If workloads are spread inefficiently across nodes, it could lead to resource wastage and high costs.</p>
+
+<ul>
+  <li><strong>Pod Affinity and Anti-Affinity</strong>: These configurations allow you to control how pods are distributed across nodes based on specific rules, such as proximity to other pods or the type of hardware available.</li>
+  <li><strong>Node Pools and Taints/Tolerations</strong>: Use node pools for efficient resource segregation. Taints and tolerations help prevent certain pods from being scheduled on unsuitable nodes, ensuring that resources are utilized effectively.</li>
+</ul>
+
+<h4 id="best-practices-for-resource-scheduling"><strong>Best Practices for Resource Scheduling:</strong></h4>
+<ul>
+  <li>Use <strong>node pools</strong> to segregate workloads based on their resource needs (e.g., high-performance nodes for CPU-heavy workloads).</li>
+  <li>Define <strong>pod affinity</strong> rules for applications that need to be placed close to one another to reduce latency.</li>
+  <li>Leverage <strong>taints and tolerations</strong> to prevent certain workloads from running on inappropriate nodes and ensure optimal resource utilization.</li>
+</ul>
+
+<hr />
+
+<h3 id="4-optimizing-storage-costs-use-the-right-storage-class"><strong>4. Optimizing Storage Costs: Use the Right Storage Class</strong></h3>
+
+<p>Storage in Kubernetes can be expensive, particularly if you’re not managing it efficiently. Kubernetes provides various <strong>Storage Classes</strong> that define the characteristics of the underlying storage (e.g., performance, cost, redundancy). Using the wrong storage class can lead to unnecessary cost overruns.</p>
+
+<h4 id="best-practices-for-storage-optimization"><strong>Best Practices for Storage Optimization:</strong></h4>
+<ul>
+  <li>Use <strong>local storage</strong> for non-persistent workloads that don’t need high availability, which can reduce storage costs significantly.</li>
+  <li>Use <strong>lower-cost storage classes</strong> like standard SSDs for less critical applications and reserve high-performance storage for applications that require low latency and high throughput.</li>
+  <li>Implement <strong>automatic backup strategies</strong> that only store data backups for the required retention period, thus saving on long-term storage costs.</li>
+</ul>
+
+<hr />
+
+<h3 id="5-monitoring-and-metrics-data-driven-decision-making"><strong>5. Monitoring and Metrics: Data-Driven Decision Making</strong></h3>
+
+<p>Effective monitoring is the key to optimizing both cost and performance in Kubernetes. Without real-time visibility, you cannot make informed decisions about resource allocation or scaling.</p>
+
+<h4 id="best-practices-for-monitoring-kubernetes-costs-and-performance"><strong>Best Practices for Monitoring Kubernetes Costs and Performance:</strong></h4>
+<ul>
+  <li>Use <strong>Prometheus</strong> for collecting and querying metrics from your Kubernetes cluster.</li>
+  <li>Implement <strong>Grafana dashboards</strong> for visualizing performance and resource utilization metrics, which help identify underutilized resources and optimize them.</li>
+  <li>Monitor the <strong>Kubernetes dashboard</strong> to get real-time insights into pod, node, and cluster-level resource consumption.</li>
+  <li>Leverage <strong>cost monitoring tools</strong> like <strong>Kubecost</strong> to get detailed breakdowns of where your Kubernetes costs are coming from and identify areas for optimization.</li>
+</ul>
+
+<hr />
+
+<h3 id="6-optimizing-cicd-pipelines-streamline-application-deployments"><strong>6. Optimizing CI/CD Pipelines: Streamline Application Deployments</strong></h3>
+
+<p>The way applications are deployed can have a significant impact on Kubernetes costs and performance. Inefficient CI/CD pipelines that deploy too many resources or lead to unnecessary restarts can waste compute resources.</p>
+
+<h4 id="best-practices-for-cicd-optimization"><strong>Best Practices for CI/CD Optimization:</strong></h4>
+<ul>
+  <li>Implement <strong>blue/green deployments</strong> or <strong>canary releases</strong> to minimize resource usage during application rollouts.</li>
+  <li>Use <strong>resource-efficient container images</strong>: Avoid bloated container images, which take up unnecessary space and increase resource overhead during deployments.</li>
+  <li>Set up <strong>deployment pipelines</strong> that only scale resources based on need, avoiding overprovisioning during the initial stages of deployment.</li>
+</ul>
+
+<hr />
+
+<h3 id="7-using-karpenter-for-kubernetes-cost-optimization"><strong>7. Using Karpenter for Kubernetes Cost Optimization</strong></h3>
+
+<p><strong>Karpenter</strong> is an open-source Kubernetes cluster autoscaler designed to automatically provision and scale nodes based on demand. It ensures that your Kubernetes infrastructure is always sized correctly, without over-provisioning or under-provisioning resources.</p>
+
+<h4 id="benefits-of-karpenter"><strong>Benefits of Karpenter:</strong></h4>
+<ul>
+  <li><strong>Dynamic Scaling</strong>: Automatically adds or removes nodes in real-time to meet workload requirements, ensuring that you only use the resources you need.</li>
+  <li><strong>Improved Resource Efficiency</strong>: Karpenter optimizes node provisioning, minimizing waste and reducing costs.</li>
+  <li><strong>Faster Scaling</strong>: Karpenter allows for faster and more efficient scaling compared to traditional Kubernetes autoscalers.</li>
+</ul>
+
+<p>By using Karpenter, you can ensure that your Kubernetes cluster is always optimized for both cost and performance, with minimal manual intervention.</p>
+
+<hr />
+
+<h3 id="conclusion-achieving-kubernetes-cost-efficiency-and-performance-optimization"><strong>Conclusion: Achieving Kubernetes Cost Efficiency and Performance Optimization</strong></h3>
+
+<p>Optimizing Kubernetes for both cost efficiency and performance requires a combination of strategic resource management, autoscaling, efficient storage, and real-time monitoring. By implementing best practices like fine-tuning resource requests, using autoscalers, optimizing storage, and leveraging tools like Karpenter, you can maximize your Kubernetes cluster’s potential.</p>
+
+<p>By continuously monitoring and adjusting your Kubernetes infrastructure, you not only reduce cloud costs but also ensure that your applications run at peak performance, delivering an improved experience for users while aligning with your organization’s financial goals.</p>
+
+<p>If you want to optimize your Kubernetes environment for cost and performance, consider reaching out to experts who can guide you through the process and implement best practices tailored to your specific needs.</p>
+
+<hr />
+
+<p>With these strategies, you’ll be well on your way to mastering Kubernetes cost efficiency and performance optimization.</p>]]></content><author><name>Shyam Mohan</name></author><category term="Kubernetes" /><summary type="html"><![CDATA[we will explore Kubernetes cost efficiency and performance optimization best practices that can help you maximize the value of your Kubernetes infrastructure]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/kubernetes-cost-efficiency-and-performance-optimization.png" /><media:content medium="image" url="http://localhost:4000/images/blog/kubernetes-cost-efficiency-and-performance-optimization.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS Step Functions</title><link href="http://localhost:4000/blog/aws-step-functions/" rel="alternate" type="text/html" title="AWS Step Functions" /><published>2024-12-24T19:07:00+05:30</published><updated>2024-12-24T19:07:00+05:30</updated><id>http://localhost:4000/blog/aws-step-functions</id><content type="html" xml:base="http://localhost:4000/blog/aws-step-functions/"><![CDATA[<p><strong>What are step functions?</strong></p>
+
+<p>Step functions allow developers to offload application orchestration into fully managed AWS services. This means you can just modularize your code to “Steps” and let AWS worry about handling partial failure cases, retries, or error handling scenarios.</p>
+
+<p><strong>Types of step functions:</strong></p>
+
+<ol>
+  <li>
+    <p>Standard workflow: Standard workflow can be used for long-running, durable, and auditable workflows.</p>
+  </li>
+  <li>
+    <p>Express Workflow: Express workflow is designed for high volume, and event processing workloads.</p>
+  </li>
+</ol>
+
+<p><strong>Features:</strong></p>
+
+<p>● Allow to create workflow which follows a fixed or dynamic sequence.</p>
+
+<p>● Inbuilt “Retry” and error handling functionality.</p>
+
+<p>● Support integration with AWS native Lambda, SNS, ECS, AWS Fargate, etc.</p>
+
+<p>● Support GUI audit workflow process, input/output, etc., well.</p>
+
+<p>● GUI provides support to analyze the running process and detect the failures immediately.</p>
+
+<p>● High availability, High scalability and low cost.</p>
+
+<p>● Manages the states of the application during workflow execution.</p>
+
+<p>● Step function is based on the concepts of tasks and state machines.</p>
+
+<p>o Tasks can be defined by using an activity or an AWS Lambda function.</p>
+
+<p>o State machines can express an algorithm that contains relations, input/output.</p>
+
+<p><strong>Best Practices:</strong></p>
+
+<p>● Set time-outs in state machine definitions, which help in better task response when something goes wrong in getting a response from an activity.</p>
+
+<p>Example:</p>
+
+<p>“ActivityState”: {</p>
+
+<p>“Type”: “Task”,</p>
+
+<p>“Resource”:</p>
+
+<p>“arn:aws:states:us-east-1:123456789012:activity:abc”,</p>
+
+<p><strong>“TimeoutSeconds”: 900,</strong></p>
+
+<p>“HeartbeatSeconds”: 40,</p>
+
+<p>“Next”: “State2”</p>
+
+<p>}</p>
+
+<p>● Always provide the Amazon S3 arn (amazon resource name) instead of large payloads to the state machine when passing input to Lambda function.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>{</p>
+
+<p><strong>“Data”: “arn:aws:s3:::MyBucket/data.json”</strong></p>
+
+<p>}</p>
+
+<p>● Handle errors in state machines while invoking AWS lambda functions.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>“Retry”: [ {</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         **"ErrorEquals": [ "Lambda.CreditServiceException"]**
+
+           "IntervalSeconds": 2,
+
+           "MaxAttempts": 3,
+ 
+           "BackoffRate": 2
+
+        } ]
+</code></pre></div></div>
+
+<p>● It has a hard quota of 25K entries during execution history. To avoid this for long-running executions, implement a pattern using the AWS lambda function.</p>
+
+<p>It supports below AWS services:</p>
+
+<p>● Lambda</p>
+
+<p>● AWS Batch</p>
+
+<p>● DynamoDB</p>
+
+<p>● ECS/Fargate</p>
+
+<p>● SNS</p>
+
+<p>● SQS</p>
+
+<p>● SageMaker</p>
+
+<p>● EMR</p>
+
+<p><strong>Pricing:</strong></p>
+
+<p>● With Step Functions Express Workflows, you pay only for what you use. You are charged based on the number of requests for your workflow and its duration.</p>
+
+<p>○ $0.025 per 1,000 state transitions (For Standard workflows)</p>
+
+<p>○ $1.00 per 1M requests (For Express workflows)</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[Step functions allow developers to offload application orchestration into fully managed AWS services.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/aws-step-functions.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/aws-step-functions.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Amazon Simple Queue Service (SQS)</title><link href="http://localhost:4000/blog/amazon-simple-queue-service-sqs/" rel="alternate" type="text/html" title="Amazon Simple Queue Service (SQS)" /><published>2024-12-23T19:03:00+05:30</published><updated>2024-12-23T19:03:00+05:30</updated><id>http://localhost:4000/blog/amazon-simple-queue-service-sqs</id><content type="html" xml:base="http://localhost:4000/blog/amazon-simple-queue-service-sqs/"><![CDATA[<p><strong>What is Amazon Simple Queue Service (SQS)?</strong></p>
+
+<p>Amazon Simple Queue Service (SQS) is a serverless service used to decouple (loose couple) serverless applications and components.</p>
+
+<p>The queue represents a temporary repository between the producer and consumer of messages.</p>
+
+<p>It can scale up to 1-10000 messages per second.</p>
+
+<p>The default retention period of messages is four days and can be extended to fourteen days.</p>
+
+<p>SQS messages get automatically deleted after being consumed by the consumers.</p>
+
+<p>SQS messages have a fixed size of 256KB.</p>
+
+<p>There are two SQS Queue types:</p>
+
+<p><strong>Standard Queue -</strong></p>
+
+<p>● The unlimited number of transactions per second.</p>
+
+<p>● Messages get delivered in any order.</p>
+
+<p>● Messages can be sent twice or multiple times.</p>
+
+<p><strong>FIFO Queue -</strong></p>
+
+<p>● 300 messages per second.</p>
+
+<p>● Support batches of 10 messages per operation, results in 3000 messages per second.</p>
+
+<p>● Messages get consumed only once.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeWwzffTzgIHfHa2pyw3xaORHeKYkZgfACqSB4FJGRGld0wFBggVinvQiNSVbsh2r6f6gOlDNVpo4SjWvqy4kQoNVrt7l9kRZL8x4GZwmN_ACDZxzhPkZhQK_72GuG3EW5qy8lK?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong>
+<strong>Delay Queue</strong> is a queue that allows users to postpone/delay the delivery of messages to a queue for a specific number of seconds.</p>
+
+<p>Messages can be delayed for 0 seconds (default) -15 (maximum) minutes.</p>
+
+<p><strong>Dead-Letter Queue</strong> is a queue for those messages that are not consumed successfully. It is used to handle message failure.</p>
+
+<p>Visibility Timeout is the amount of time during which SQS prevents other consumers from receiving (poll) and processing the messages.</p>
+
+<p>● Default visibility timeout - 30 seconds</p>
+
+<p>● Minimum visibility timeout - 0 seconds</p>
+
+<p>● Maximum visibility timeout - 12 hours</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[Amazon Simple Queue Service (SQS) is a serverless service used to decouple (loose couple) serverless applications and components.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/amazon-simple-queue-service-sqs.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/amazon-simple-queue-service-sqs.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS AppSync</title><link href="http://localhost:4000/blog/aws-appsync/" rel="alternate" type="text/html" title="AWS AppSync" /><published>2024-12-23T00:48:00+05:30</published><updated>2024-12-23T00:48:00+05:30</updated><id>http://localhost:4000/blog/aws-appsync</id><content type="html" xml:base="http://localhost:4000/blog/aws-appsync/"><![CDATA[<p><strong>What is AWS AppSync?</strong></p>
+
+<p>AWS AppSync simplifies the process of developing an application by providing us to create flexible, secure, extensible, and real-time APIs. It can be called “The
+Facilitator” because it connects the client applications (mobile apps, web apps, IOT services, etc.) to AWS services (DynamoDB, AWS Aurora, etc.).</p>
+
+<p><strong>AppSync = “The Facilitator”</strong></p>
+
+<p>Within AWS AppSync, there are GraphQL schema and Resolvers that help secure access and combine data from databases, API, and other backend systems.</p>
+
+<p>GraphQL Schema: This is the unique structure that AWS AppSync uses to layout the data format before putting it into a database schema.</p>
+
+<p>Resolvers: This resolves the data types, which the user creates in the Graph schema to put and receive from the data source.</p>
+
+<p><strong>AppSync Benefits:</strong></p>
+
+<p>● Fast setup – great scalability as needed.</p>
+
+<p>● Real-time subscriptions and offline access.</p>
+
+<p>● Unified secured access.</p>
+
+<p>● Provision of caching capabilities for performance improvements.</p>
+
+<p>● Bandwidth optimization.</p>
+
+<p>● Conflict resolution in the cloud.</p>
+
+<p><strong>Use Cases:</strong></p>
+
+<p>There are many use cases where AWS AppSync can play a vital role. Some of them are below:</p>
+
+<p>● Banking Alerts.</p>
+
+<p>● Chat Applications.</p>
+
+<p>● Financial transactions.</p>
+
+<p>● Shared Whiteboards.</p>
+
+<p>● Document Collaboration</p>
+
+<p>● Multiplayer games.</p>
+
+<p>The below diagram shows how AWS AppSync helps to build a real-time blog application. AWS Cognito provides secure authentication. The user can create all the CRUD operations, posts, comments, etc., using the facilitator (AWS AppSync) and store/receive to Amazon backend servers such as DynamoDB, AWS Aurora, AWS Lambda, etc.
+<strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfNirVuCx2Kh0scmTtX6NTx8xHtTje_gRthidRiAgC1uUc4eHOA5vZzmgqQc6VF8PT6WWilPAujsYXFdhxplcFIXzIRdAP5IZ8AauhZDnCrNJgn4CWQC9zb04a4Rr5cUK9kvRVv5w?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong></p>
+
+<p><strong>Pricing:</strong></p>
+
+<p>● Query and Data Modification Operations</p>
+
+<p>○ $4.00 per million operations.</p>
+
+<p>● Real-time Updates</p>
+
+<p>○ $2.00 per million updates.</p>
+
+<p>○ $0.08 per million minutes of connection to the AWS AppSync service</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[AWS AppSync simplifies the process of developing an application by providing us to create flexible, secure, extensible, and real-time APIs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/aws-appsync.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/aws-appsync.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS SNS (Simple Notification Service)</title><link href="http://localhost:4000/blog/aws-sns-simple-notification-service/" rel="alternate" type="text/html" title="AWS SNS (Simple Notification Service)" /><published>2024-12-21T14:35:00+05:30</published><updated>2024-12-21T14:35:00+05:30</updated><id>http://localhost:4000/blog/aws-sns-simple-notification-service</id><content type="html" xml:base="http://localhost:4000/blog/aws-sns-simple-notification-service/"><![CDATA[<p><strong>What is AWS SNS?</strong></p>
+
+<p>Amazon Simple Notification Service (Amazon SNS) is a web service that makes it easy to set up, operate, and send notifications from the cloud.</p>
+
+<p>It provides developers with a highly scalable, flexible, and cost-effective approach to publish messages from an application and deliver them to subscribers or other
+applications. It provides push notifications directly to mobile devices and delivers notifications by SMS text messages, email to Amazon Simple Queue Service
+(SQS), or any HTTP client.
+It allows developers to group multiple recipients using topics.</p>
+
+<p>It consists of topics and subscribers.</p>
+
+<p>A topic is an access point for allowing recipients to get identical copies for the same notification. One topic can support deliveries to multiple end-points – for example -
+we can group together to android, IOS, and SMS text messages.</p>
+
+<p>Two types of topics can be defined in the AWS SNS service.</p>
+<ol>
+  <li>Standard topic is used when incoming messages are not in order. In other words, messages can be delivered as they are received.</li>
+  <li>FIFO topic is designed to maintain order of the messages between the applications, especially when the events are critical. Duplication will be avoided in this case.</li>
+</ol>
+
+<p><strong>Features:</strong></p>
+
+<p>● Instantaneous, push-based delivery.</p>
+
+<p>● Simple API and easy integration with AWS services.</p>
+
+<p>● Flexible message delivery over multiple message protocols.</p>
+
+<p>● Cost-effective – as pay as pay-as-you-go model.</p>
+
+<p>● Fully managed and durable with automatic scalability.</p>
+
+<p><strong>Use cases:</strong></p>
+
+<p>● SNS application to person: below use cases show SNS service publishes messages to topic, sending messages to each customer’s cell phone. This is an example of an AWS application to personal service.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdVDmIjIxQg03zH63qTKLVIvCFFN7mIZ2TqK85ieBQaO2SZFTlVpZ4KEapLW5m62RTEhP5rsUZk47VlgwanP1n6PJkQ3FdmptBkJAEGrF_can87Rpmgr3eiCWl3OjhV-voEtAKH5Q?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong></p>
+
+<p>● SNS Application to Application: In this type of service, where SNS topic would interact with different AWS services such as AWS Lambda, Node JS app, and SQS services. For example, AWS S3 service has only configuration with AWS SNS service, which will be responsible for sending identical messages to other AWS services.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcdqLsmbH4MXkD5L1i3LzCU_QldjNV21Ecgyy9MuR57z7GBaoK8Iv9CdoYA58CtY8uS0XaBZHSHtuwiAuPqMekl8DWCnlIKzLLPgwRKNipFSCB9kmV4txnao8h9cWabKFSaz8yiGg?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong>
+<strong>Pricing:</strong></p>
+
+<p>● Standard Topics: First 1 million Amazon SNS requests per month are free. There will be a cost associated with $0.50 per 1 million requests.</p>
+
+<p>● FIFO Topics: Amazon SNS FIFO topic pricing is based on the number of published messages, the number of subscribed messages, and their respective amount of payload data.</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[Amazon Simple Notification Service (Amazon SNS) is a web service that makes it easy to set up, operate, and send notifications from the cloud.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/aws-sns-simple-notification-service.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/aws-sns-simple-notification-service.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Amazon EventBridge</title><link href="http://localhost:4000/blog/amazon-eventbridge/" rel="alternate" type="text/html" title="Amazon EventBridge" /><published>2024-12-20T14:23:00+05:30</published><updated>2024-12-20T14:23:00+05:30</updated><id>http://localhost:4000/blog/amazon-eventbridge</id><content type="html" xml:base="http://localhost:4000/blog/amazon-eventbridge/"><![CDATA[<p><strong>What is Amazon EventBridge?</strong></p>
+
+<p>A serverless event bus service for Software-as-a-Service (SAAS) and AWS services.</p>
+
+<p>In simple words, Amazon EventBridge provides an easy solution to integrate SAAS, custom-build applications with more than 17+ AWS services with the delivery of real-time data from different event sources. Users can easily set up the routing rules to determine the target web-service, and multiple target locations (such as AWS Lambda or AWS SNS) can be selected at once.</p>
+
+<p>It is a fully managed service that takes care of event ingestion, delivery, security, authorization, error handling, and required infrastructure management tasks to set up and run a highly scalable serverless event bus. EventBridge was formerly called Amazon CloudWatch Events, and it uses the same CloudWatch Event API.</p>
+
+<p><strong>Key Concepts:-</strong></p>
+
+<p><strong>Event Buses:</strong></p>
+
+<p>An event bus receives events. When a user creates a rule, which will be associated with a specific event bus, the rule matches only to the event received by the event bus. Each user’s account has one default event bus, which receives events from AWS services. We can also create our custom event buses.</p>
+
+<p><strong>Events:</strong></p>
+
+<p>An event indicates a change in the environment. By creating rules, you can have AWS services that act automatically when changes occur in other AWS services, in SaaS applications, or user’s custom applications.</p>
+
+<p><strong>Shema Registry:</strong></p>
+
+<p>A Schema Registry is a container for schemas. Schemas are available for the events for all AWS services on Amazon EventBridge. Users can always create or update their schemas or automatically infer schemas from events running on event buses. Each schema will have multiple versions. Users can use the latest schema or select earlier versions.</p>
+
+<p><strong>Rules:</strong></p>
+
+<p>A rule matches incoming events and routes them to targets for processing. A single rule can route an event (JSON format) to multiple targets. All pointed targets will be
+processed in parallel and no particular order.</p>
+
+<p><strong>Targets:</strong></p>
+
+<p>A target processes events and receives events in JSON format. A rule’s target must be in the same region as a rule.</p>
+
+<p><strong>Features:</strong></p>
+
+<p>● Fully managed, pay-as-you-go.</p>
+
+<p>● Native integration with SaaS providers.</p>
+
+<p>● 90+ AWS services as sources.</p>
+
+<p>● 17 AWS services as targets.</p>
+
+<p>● $1 per million events put into the bus.</p>
+
+<p>● No additional cost for delivery.</p>
+
+<p>● Multiple target locations for delivery.</p>
+
+<p>● Easy to scale and manage.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXccsLyVFARMOpUoROwE5lSPsaSitTVEIC-LNIXbNcHaWspGBz_rx7v5XAR4S0smEsAWKV6Kbn04qzLsrpFQIOqWUdYcN_qq8H4tqtaQyTWkK2a8ZXt5wWN5YDdvir5iQjepDqg5kA?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong>
+As shown above, this service receives input from different sources (such as custom apps, SaaS applications, and AWS services). Amazon EventBridge contains an event source for a SaaS application responsible for authentication and security of the source. EventBridge has a schema registry, event buses (default, custom, and partner), and rules for the target services.</p>
+
+<p><strong>Pricing:</strong></p>
+
+<p>● There are no additional charges for rules or event delivery.</p>
+
+<p>● The users only pay for events published to your event bus, events ingested for Schema Discovery, and Event Replay.</p>
+
+<p>○ Custom events: Charge $1.00 per million requests.</p>
+
+<p>○ Third-party events (SaaS): Charge $1.00 per million requests.</p>
+
+<p>○ Cross-account events: $1.00 per million.</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[In simple words, Amazon EventBridge provides an easy solution to integrate SAAS, custom-build applications with more than 17+ AWS services with the delivery of real-time data from different event sources.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/amazon-eventbridge.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/amazon-eventbridge.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS VPC</title><link href="http://localhost:4000/blog/aws-vpc/" rel="alternate" type="text/html" title="AWS VPC" /><published>2024-12-19T23:11:00+05:30</published><updated>2024-12-19T23:11:00+05:30</updated><id>http://localhost:4000/blog/aws-vpc</id><content type="html" xml:base="http://localhost:4000/blog/aws-vpc/"><![CDATA[<p><strong>What is AWS VPC?</strong></p>
+
+<p>Amazon Virtual Private Cloud (VPC) is a service that allows users to create a virtual dedicated network for resources.</p>
+
+<p><strong>Security Groups:</strong></p>
+
+<p><strong>Default Security Groups:-</strong></p>
+
+<p>Inbound rule - Allows all inbound traffic</p>
+
+<p>Outbound rule - Allows all outbound traffic</p>
+
+<p><strong>Custom Security Groups:- (by default)</strong></p>
+
+<p>Inbound rule - Allows no inbound traffic</p>
+
+<p>Outbound rule - Allows all outbound traffic</p>
+
+<p><strong>Network ACLs (access control list):</strong></p>
+
+<p><strong>Default Network ACL:-</strong></p>
+
+<p>Inbound rule - Allows all inbound traffic</p>
+
+<p>Outbound rule - Allows all outbound traffic</p>
+
+<p><strong>Custom Network ACL:- (by default)</strong></p>
+
+<p>Inbound rule - Denies all inbound traffic</p>
+
+<p>Outbound rule - Denies all outbound traffic</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcZ4IwbJYuewgQ3bhHGY4xhUNNVRu3V-S8VGNcgYsYySGmiEcmi3yxSHHWSTk3XWoEJt1wOm9Pxe_FX651F_81nsc2UpEpN8xcTQTWa5nvCImbOSXCBXcD_ureLyn8_dhmwWWf_cQ?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong></p>
+
+<p><strong>Components of VPC:</strong></p>
+
+<p><strong>Subnets</strong></p>
+
+<p>● The subnet is a core component of the VPC.</p>
+
+<p>● Resources will reside inside the Subnet only.</p>
+
+<p>● Subnets are the logical division of the IP Address.</p>
+
+<p>● One Subnet should not overlap another subnet.</p>
+
+<p>● A subnet can be private or public.</p>
+
+<p>● Resources in Public Subnet will have internet access.</p>
+
+<p>● Resources in the Private Subnet will not have internet access.</p>
+
+<p>● If private subnet resources want internet accessibility then we will need a NAT gateway or NAT instance in a public subnet.</p>
+
+<p><strong>Route Tables</strong></p>
+
+<p>● Route tables will decide where the network traffic will be directed.</p>
+
+<p>● One Subnet can connect to one route table at a time.</p>
+
+<p>● But one Route table can connect to multiple subnets.</p>
+
+<p>● If the route table is connected to the Internet Gateway and that route table is associated with the subnet, then that subnet will be considered as a Public Subnet.</p>
+
+<p>● The private subnet is not associated with the route table which is connected to the Internet gateway.</p>
+
+<p><strong>NAT Devices</strong></p>
+
+<p>● NAT stands for Network Address Translation.</p>
+
+<p>● It allows resources in the Private subnet to connect to the internet if required.</p>
+
+<p><strong>NAT Instance</strong></p>
+
+<p>● It is an EC2 Instance.</p>
+
+<p>● It will be deployed in the Public Subnet.</p>
+
+<p>● NAT Instance allows you to initiate IPv4 Outbound traffic to the internet.</p>
+
+<p>● It will not allow the instance to receive inbound traffic from the internet.</p>
+
+<p><strong>NAT Gateway</strong></p>
+
+<p>● Nat Gateway is Managed by AWS.</p>
+
+<p>● NAT will be using the elastic IP address.</p>
+
+<p>● You will be charged for NAT gateway on a per hour basis and data processing rates.</p>
+
+<p>● NAT is not for IPv6 traffic.</p>
+
+<p>● NAT gateway allows you to initiate IPv4 Outbound traffic to the internet.</p>
+
+<p>● It will not allow the instance to receive inbound traffic from the internet.</p>
+
+<p><strong>DHCP Options Set:</strong></p>
+
+<p>● DHCP stands for Dynamic Host Configuration Protocol.</p>
+
+<p>● It is the standard for passing the various configuration information to hosts over the TCP/IP Network.</p>
+
+<p>● DHCP contains information such as domain name, domain name server.</p>
+
+<p>● All this information will be contained in Configuration parameters.</p>
+
+<p>● DHCP will be created automatically while creating VPC.</p>
+
+<p><strong>PrivateLink</strong></p>
+
+<p>● PrivateLink is a technology that will allow you to access services privately without internet connectivity and it will use the private IP Addresses.</p>
+
+<p><strong>Endpoints</strong></p>
+
+<p>● It allows you to create connections between your VPC and supported AWS services.</p>
+
+<p>● The endpoints are powered by PrivateLink.</p>
+
+<p>● The traffic will not leave the AWS network.</p>
+
+<p>● It means endpoints will not require Internet Gateway, Virtual Private Gateway, NAT components.</p>
+
+<p>● The public IP address is not required for communication.</p>
+
+<p>● Communication will be established between the VPC and other services with high availability.</p>
+
+<p><strong>Types of Endpoints</strong></p>
+
+<p><strong>● Interface Endpoints</strong></p>
+
+<p>o It is an entry point for traffic interception.</p>
+
+<p>o It will route the traffic to the service that you configure.</p>
+
+<p>o It will use an ENI with a private IP address.</p>
+
+<p>o For Example: it will allow instances to connect to Amazon</p>
+
+<p>Kinesis through interface endpoint.</p>
+
+<p><strong>● Gateway Load balancer Endpoints</strong></p>
+
+<p>o It is an entry point for traffic interception.</p>
+
+<p>o It will route the traffic to the service that you configure.</p>
+
+<p>o It will use load balancers to route the traffic.</p>
+
+<p>o For Example Security Inspection.</p>
+
+<p><strong>● Gateway Endpoints</strong></p>
+
+<p>o It is a gateway that you defined in Route Table as a Target.</p>
+
+<p>o And the destination will be the supported AWS Services.</p>
+
+<p>o Amazon S3, DynamoDB supports Gateway Endpoint.</p>
+
+<p><strong>Egress Only Internet Gateway</strong></p>
+
+<p>● An egress-only internet gateway is designed only for IPv6 address communications.</p>
+
+<p>● It is a highly available, horizontally scaled component which will allow outbound only rule for IPv6 traffic.</p>
+
+<p>● It will not allow inbound connection to your EC2 Instances.</p>
+
+<p><strong>VPC Peering</strong>:</p>
+
+<p>● VPC peering establishes a connection between two VPCs.</p>
+
+<p>● EC2 Instances in both the VPC can communicate with each other as if they are in the same network.</p>
+
+<p>● Peering connections can be established between VPCs in the same region, VPCs in a different region or VPCs in another AWS Account as well.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdCtaWPtcWJx_0MFLX4XNtohW9JZNh1gJDEqMxAo_uIEVRrIypNtDfyqh33B1V4Bmuw6-UAFGyHn8yF_BZPnxidbxojX-WP-BTsODen9IwR361c05GpeeA3XMYbyNkrMtvQ_T_b4Q?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong>
+<strong>VPN</strong></p>
+
+<p>● Virtual Private Network (VPN) establish secure connections between multiple networks i.e., on-premise network, client space, AWS Cloud, and all the network acts</p>
+
+<p>● VPN provides a high-available, elastic, and managed solution to protect your network traffic.</p>
+
+<p><strong>AWS Site-to-Site VPN</strong></p>
+
+<p>o AWS Site-to-Site VPN creates encrypted tunnels between your network and your Amazon Virtual Private Clouds or AWS Transit Gateways.</p>
+
+<p><strong>AWS Client VPN</strong></p>
+
+<p>o AWS Client VPN connects your users to AWS or on-premises resources using a VPN software client.</p>
+
+<p><strong>Use Cases:</strong></p>
+
+<p>● Host a simple public-facing website.</p>
+
+<p>● Host multi-tier web applications.</p>
+
+<p>● Used for disaster recovery as well.</p>
+
+<p><strong>Pricing:</strong></p>
+
+<p>● No additional charges for creating a custom VPC.</p>
+
+<p>● NAT does not come under the free tier limit you will get charged per hour basis.</p>
+
+<p>● NAT Gateway data processing charge and data transfer charges will be separate.</p>
+
+<p>● You will get charged per hour basis for traffic mirroring.</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[Amazon Virtual Private Cloud (VPC) is a service that allows users to create a virtual dedicated network for resources.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/aws-vpc.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/aws-vpc.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Amazon Route 53</title><link href="http://localhost:4000/blog/amazon-route-53/" rel="alternate" type="text/html" title="Amazon Route 53" /><published>2024-12-19T04:24:00+05:30</published><updated>2024-12-19T04:24:00+05:30</updated><id>http://localhost:4000/blog/amazon-route-53</id><content type="html" xml:base="http://localhost:4000/blog/amazon-route-53/"><![CDATA[<p><strong>What is Amazon Route 53?</strong></p>
+
+<p>Route53 is a managed DNS (Domain Name System) service where DNS is a collection of rules and records intended to help clients/users understand how to reach any server by its domain name.</p>
+
+<p><strong>Route 53 hosted zone</strong> is a collection of records for a specified domain that can be managed together. There are two types of zones:</p>
+
+<p>● Public host zone – It determines how traffic is routed on the Internet.</p>
+
+<p>● Private hosted zone – It determines how traffic is routed within VPC.</p>
+
+<p><strong>Route 53 TTL (seconds):</strong></p>
+
+<p>● It is the amount of time for which a DNS resolver creates a cache information about the records and reduces the query latency.</p>
+
+<p>● Default TTL does not exist for any record type but always specifies a TTL of 60 seconds or less so that clients/users can respond quickly to changes in
+health status.</p>
+
+<p><strong>Route53 CNAME vs. Alias</strong></p>
+
+<p><strong>CNAME</strong></p>
+
+<p>It points a hostname to any other hostname.</p>
+
+<p>(app.mything.com -&gt; abc.anything.com)</p>
+
+<p>It works only for the non-root domains. (abcxyz.maindomain.com)</p>
+
+<p>Route 53 charges for CNAME queries.</p>
+
+<p>It points to any DNS record that is hosted anywhere.</p>
+
+<p><strong>Alias</strong></p>
+
+<p>It points a hostname to an AWS Resource. (app.mything.com -&gt;abc.amazonaws.com)</p>
+
+<p>It works for the root domain and non-root domain. (maindomain.com)</p>
+
+<p>Route 53 doesn’t charge for Alias queries.</p>
+
+<p>It points to an ELB, CloudFront distribution, Elastic Beanstalk environment, S3 bucket as a static website, or another record in the same hosted zone.</p>
+
+<p>The most common records supported in Route 53 are:</p>
+
+<p>● A: hostname to IPv4</p>
+
+<p>● AAAA: hostname to IPv6</p>
+
+<p>● CNAME: hostname to hostname</p>
+
+<p>● Alias: hostname to AWS resource.</p>
+
+<p>Other supported records are:</p>
+
+<p>● CAA (certification authority authorization)</p>
+
+<p>● MX (mail exchange record)</p>
+
+<p>● NAPTR (name authority pointer record)</p>
+
+<p>● NS (name server record)</p>
+
+<p>● PTR (pointer record)</p>
+
+<p>● SOA (start of authority record)</p>
+
+<p>● SPF (sender policy framework)</p>
+
+<p>● SRV (service locator)</p>
+
+<p>● TXT (text record)</p>
+
+<p><strong>Route 53 Routing Policies:</strong></p>
+
+<p>Simple:</p>
+
+<p>● It is used when there is a need to redirect traffic to a single resource.</p>
+
+<p>● It does not support health checks.</p>
+
+<p>Weighted:</p>
+
+<p>● It is similar to simple, but you can specify a weight associated with resources.</p>
+
+<p>● It supports health checks.</p>
+
+<p>Failover:</p>
+
+<p>● If the primary resource is down (based on health checks), it will route to a secondary destination.</p>
+
+<p>● It supports health checks.</p>
+
+<p>Geo-location:</p>
+
+<p>● It routes traffic to the closest geographic location you are in.</p>
+
+<p>Geo-proximity:</p>
+
+<p>● It routes traffic based on the location of resources to the closest region within a geographic area.</p>
+
+<p>Latency based:</p>
+
+<p>● It routes traffic to the destination that has the least latency.</p>
+
+<p>Multi-value answer:</p>
+
+<p>● It distributes DNS responses across multiple IP addresses.</p>
+
+<p>● If a web server becomes unavailable after a resolver cache a response, a user can try up to eight other IP addresses from the response to reduce downtime.</p>
+
+<p><strong>Use cases:</strong></p>
+
+<p>● When users try to register a domain with Route 53, it becomes the trustworthy DNS server for that domain and creates a public hosted zone.</p>
+
+<p>● Users can have their domain registered in one AWS account and the hosted zone in another AWS account.</p>
+
+<p>● For private hosted zones, the following VPC settings must be ‘true’:</p>
+
+<p>○ enableDnsHostname.</p>
+
+<p>○ enableDnsSupport.</p>
+
+<p>● Health checks can be pointed at:</p>
+
+<p>○ Endpoints (can be IP addresses or domain names.)</p>
+
+<p>○ Status of other health checks.</p>
+
+<p>○ Status of a CloudWatch alarm.</p>
+
+<p>● Route53 as a Registrar: A domain name registrar is an organization that manages the reservation of Internet domain names.</p>
+
+<p>● Domain Registrar != DNS</p>
+
+<p><strong>Price details:</strong></p>
+
+<p>● There are no contracts or any down payments for using Amazon Route 53.</p>
+
+<p>● Route 53 charges annually for each domain name registered via Route 53.</p>
+
+<p>● Different rates are applied for Standard Queries, Latency Based Routing Queries, Geo DNS and Geo Proximity Queries.</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[Route53 is a managed DNS (Domain Name System) service where DNS is a collection of rules and records intended]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/amazon-route-53.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/amazon-route-53.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS Elastic Load Balancer</title><link href="http://localhost:4000/blog/aws-elastic-load-balancer/" rel="alternate" type="text/html" title="AWS Elastic Load Balancer" /><published>2024-12-17T19:10:00+05:30</published><updated>2024-12-17T19:10:00+05:30</updated><id>http://localhost:4000/blog/aws-elastic-load-balancer</id><content type="html" xml:base="http://localhost:4000/blog/aws-elastic-load-balancer/"><![CDATA[<p><strong>What is AWS Elastic Load Balancer?</strong></p>
+
+<p>● ELB Stands for Elastic Load Balancer.</p>
+
+<p>● It distributes the incoming traffic to multiple targets such as Instances, Containers, Lambda Functions, IP Addresses etc.</p>
+
+<p>● It spans in single or multiple availability zones.</p>
+
+<p>● It provides high availability, scaling and security for the application.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfNwKX7_5gwlGxExkpWPVod-roH5_r_kxrq98LvWMQ5qJCkZ-u2DTbPc1tj7kdnrkotwlAad3BVsMGWec_ILFWgSntnzKLMRv_rByxgfev8tvrfu8LykuHM1ze2B3FCai9OhvecbA?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong>	
+<strong>Types of Elastic Load Balancer</strong></p>
+
+<p><strong>Application Load Balancer</strong></p>
+
+<p>o It is best suited for load balancing of the web applications and websites.</p>
+
+<p>o It routes traffic to targets within Amazon VPC based on the content of the request.</p>
+
+<p><strong>Network Load Balancer</strong></p>
+
+<p>o It is mostly for the application which has ultra-high performance.</p>
+
+<p>o This load balancer also acts as a single point of contact for the clients.
+o This Load Balancer distributes the incoming traffic to the multiple targets.</p>
+
+<p>o The listener checks the connection request from the clients using the protocol and ports we specify.</p>
+
+<p>o It supports TCP, UDP and TLS protocol.</p>
+
+<p><strong>Gateway Load Balancer (Newly Introduced)</strong></p>
+
+<p>● It is like other load balancers but it is for third-party appliances.</p>
+
+<p>● This provides load balancing and auto scaling for the fleet of third-party appliances.</p>
+
+<p>● It is used for security, network analytics and similar use cases.</p>
+
+<p><strong>Classic Load Balancer</strong></p>
+
+<p>● It operates at request and connection level.</p>
+
+<p>● It is for the EC2 Instance build in the old Classic Network.</p>
+
+<p>● It is an old generation Load Balancer.</p>
+
+<p>● AWS recommends to use Application or Network Load Balancer instead.</p>
+
+<p><strong>Listeners</strong></p>
+
+<p>● A listener is a process that checks for connection requests, using the protocol and port that you configured.</p>
+
+<p>● You can add HTTP, HTTPS or both.</p>
+
+<p>Target Group</p>
+
+<p>● It is the destination of the ELB.</p>
+
+<p>● Different target groups can be created for different types of requests.</p>
+
+<p>● For example, one target group i.e., a fleet of instances will be handling the general request and other target groups will handle the other type of request such as micro services.</p>
+
+<p>● Currently, three types of target supported by ELB: Instance, IP and Lambda Functions.</p>
+
+<p><strong>Health Check</strong></p>
+
+<p>● Health checks will be checking the health of Targets regularly and if any target is unhealthy then traffic will not be sent to that Target.</p>
+
+<p>● We can define the number of consecutive health checks failure then only the Load Balancer will not send the traffic to those Targets.</p>
+
+<p>● e.g., If 4 EC2 are registered as Target behind Application Load Balancer and if one of the EC2 Instance is not healthy then Load Balancer will not send the traffic to that EC2 Instance</p>
+
+<p><strong>Use Cases:</strong></p>
+
+<p>● Web Application Deployed in Multiple Servers: If a web
+Application/Website is deployed in multiple EC2 Instances then we can distribute the traffic between the Application Load Balancers.</p>
+
+<p>● Building a Hybrid Cloud: Elastic Load Balancing offers the ability to load balance across AWS and on-premises resources, using a single load balancer. You can achieve this by registering all of your resources to the same target group and associating the target group with a load balancer.</p>
+
+<p>● Migrating to AWS: ELB supports the load balancing capabilities critical for you to migrate to AWS. ELB is well positioned to load balance both traditional as well as cloud native applications with auto scaling capabilities that eliminate the guess work in capacity planning.</p>
+
+<p><strong>Charges:</strong></p>
+
+<p>● Charges will be based on each hour or partial hour that the ELB is running.</p>
+
+<p>● Charges will also depend on the LCU (Load Balancer Units)</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[ELB Stands for Elastic Load Balancer. It distributes the incoming traffic to multiple targets such as Instances, Containers, Lambda Functions, IP Addresses etc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/aws-elastic-load-balancer.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/aws-elastic-load-balancer.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS Direct Connect</title><link href="http://localhost:4000/blog/aws-direct-connect/" rel="alternate" type="text/html" title="AWS Direct Connect" /><published>2024-12-16T18:57:00+05:30</published><updated>2024-12-16T18:57:00+05:30</updated><id>http://localhost:4000/blog/aws-direct-connect</id><content type="html" xml:base="http://localhost:4000/blog/aws-direct-connect/"><![CDATA[<p><strong>What is AWS Direct Connect?</strong></p>
+
+<p>AWS Direct Connect is a cloud service that helps to establish a dedicated connection from an on-premises network to one or more VPCs in the same region.</p>
+
+<p>Private VIF with AWS Direct Connect helps to transfer business-critical data from the data-center, office or colocation environment into AWS, bypassing your Internet
+service provider and removing network traffic.</p>
+
+<p>Private virtual interface: It helps to connect an Amazon VPC using private IP addresses.</p>
+
+<p>Public virtual interface: It helps to connect AWS services located in any AWS region (except China) from your on-premises data center using public IP addresses.</p>
+
+<p>Methods of connecting to a VPC:</p>
+
+<p>● AWS Managed VPN.</p>
+
+<p>● AWS Direct Connect.</p>
+
+<p>● AWS Direct Connect plus a VPN.</p>
+
+<p>● AWS VPN CloudHub.</p>
+
+<p>● Transit VPC.</p>
+
+<p>● VPC Peering.</p>
+
+<p>● AWS PrivateLink.</p>
+
+<p>● VPC Endpoints.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcktTZOnb8tMOm6IKqgQCQj5BcyBrOKDqy-7NzBN4UrhK04WniEkdPYpV05aUFX042rKYkuA8jXdQRfwiqT7srx3Z6dc6d1mB-TTGRQol7Ugc8QCMMcarPMA486ZIaQTZhQJfvQxg?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong>
+<strong>Direct Connect gateway:</strong>
+It is a globally available service used to connect multiple Amazon VPCs across different regions or AWS accounts. It can be integrated with either of the following
+gateways:</p>
+
+<p>● Transit gateway - it is a network hub used to connect multiple VPCs to an on-premise network in the same region.</p>
+
+<p>● Virtual private gateway - It is a distributed edge routing function on the edges of VPC.</p>
+
+<p><strong><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeL9uQH6Tg8jJ4xJGQB-pN0kqmgfuugxvg-2kroeEjZWen0Oi3ys7fCmN5VofAeAnWkbvxg4naWmL2NfFY41_7e2tAvy1dbp5zjG6YgbIU_YgdPjnOVIHD7bCczpstl57NRuKwQ7A?key=q390jo8iRKV-c2BprE8LOg" alt="" /></strong></p>
+
+<p><strong>Features:</strong></p>
+
+<p>● AWS Management Console helps to configure AWS Direct Connect service quickly and easily.</p>
+
+<p>● It helps to choose the dedicated connection providing a more consistent network experience over Internet-based connections.</p>
+
+<p>● It works with all AWS services that are accessible over the Internet.</p>
+
+<p>● It helps to scale by using 1Gbps and 10 Gbps connections based on the capacity needed.</p>
+
+<p><strong>Price details:</strong></p>
+
+<p>● Pay only for what you use. There is no minimum fee.</p>
+
+<p>● Charges for Dedicated Connection port hours are consistent across all AWS Direct Connect locations globally except Japan.</p>
+
+<p>● Data Transfer OUT charges are dependent on the source AWS Region.</p>]]></content><author><name>Shyam Mohan</name></author><category term="AWS" /><summary type="html"><![CDATA[AWS Direct Connect is a cloud service that helps to establish a dedicated connection from an on-premises network to one or more VPCs in the same region.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/blog/aws-direct-connect.webp" /><media:content medium="image" url="http://localhost:4000/images/blog/aws-direct-connect.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

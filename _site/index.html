@@ -1,174 +1,507 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI/ML-powered Kubernetes Performance & Cost Optimization Platform">
-  <title>RazorOps – Smarter Kubernetes Optimization</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Cloud Agnostic CICD Automation Platform | Razorops</title>
-<meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Cloud Agnostic CICD Automation Platform" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Razorops is a Cloud Agnostic DevOps Automation Platform to automate testing and deployment across the environments in few steps." />
-<meta property="og:description" content="Razorops is a Cloud Agnostic DevOps Automation Platform to automate testing and deployment across the environments in few steps." />
-<link rel="canonical" href="https://razorops.com" />
-<meta property="og:url" content="https://razorops.com" />
-<meta property="og:site_name" content="Razorops" />
-<meta property="og:image" content="http://localhost:4000/images/home/container-native-cicd.webp" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/images/home/container-native-cicd.webp" />
-<meta property="twitter:title" content="Cloud Agnostic CICD Automation Platform" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Razorops is a Cloud Agnostic DevOps Automation Platform to automate testing and deployment across the environments in few steps.","headline":"Cloud Agnostic CICD Automation Platform","image":"http://localhost:4000/images/home/container-native-cicd.webp","name":"Razorops","url":"https://razorops.com"}</script>
-<!-- End Jekyll SEO tag -->
+    <!-- ## META TAGS - VITAL FOR SEO ## -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorops | AI-Powered Kubernetes Performance & Cost Optimization</title>
+    <meta name="description" content="Razorops is an AI agent that automates Kubernetes cost reduction and performance tuning. Get intelligent recommendations and auto-apply changes to slash your cloud bills and boost efficiency.">
+    <meta name="keywords" content="Kubernetes optimization, Kubernetes cost reduction, AI for Kubernetes, Kubernetes performance, Kubernetes automation, DevOps AI, Razorops">
+    <meta name="author" content="Razorops Inc.">
+    
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Razorops | AI-Powered Kubernetes Performance & Cost Optimization">
+    <meta property="og:description" content="Stop overspending on Kubernetes. Razorops uses AI to analyze, recommend, and automate resource optimization for maximum performance at minimum cost.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=RAZOROPS">
+    <meta property="og:url" content="https://www.razorops.com">
+    <meta property="og:type" content="website">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-<link rel="manifest" href="/images/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Razorops | AI-Powered Kubernetes Performance & Cost Optimization">
+    <meta name="twitter:description" content="AI-driven recommendations and automation to make your Kubernetes clusters efficient, performant, and cost-effective.">
+    <meta name="twitter:image" content="https://placehold.co/1200x600/0a0a0a/ffffff?text=RAZOROPS">
 
-<meta name="msvalidate.01" content="7BE6D83892549154237547136EDAE30E">
-  <style>
-    .hero {
-      background: linear-gradient(120deg, #0d6efd, #6610f2);
-      color: white;
-      padding: 100px 0;
-    }
-    .features-icon {
-      font-size: 2rem;
-      color: #0d6efd;
-    }
-    .cta-section {
-      background-color: #f8f9fa;
-      padding: 60px 0;
-    }
-  </style>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- ## FRAMEWORKS & FONTS ## -->
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- ## CUSTOM STYLES ## -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #f8f9fa;
+        }
+
+        /* Gradient Text Styling */
+        .gradient-text {
+            background: linear-gradient(90deg, #8E2DE2, #4A00E0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        /* Gradient Button Styling */
+        .btn-gradient {
+            background-image: linear-gradient(to right, #8E2DE2 0%, #4A00E0 51%, #8E2DE2 100%);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: 0.5s;
+            box-shadow: 0 4px 15px 0 rgba(142, 45, 226, 0.3);
+        }
+
+        .btn-gradient:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn-outline-light {
+            border-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .section-bg-gradient {
+            background: linear-gradient(160deg, #05020a 0%, #11051f 100%);
+        }
+
+        .hero-section {
+            padding: 120px 0;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section {
+                padding: 80px 0;
+                text-align: center;
+            }
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #8E2DE2;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .footer {
+            background-color: #05020a;
+            padding: 40px 0;
+        }
+
+        
+    </style>
 </head>
 <body>
-  <style>
 
-.modal-body {
-    position: relative;
-    padding: 6px !important;
-}
+    <!-- ## HEADER & NAVIGATION ## -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fs-4 fw-bold" href="#">RAZOROPS<span class="gradient-text">.ai</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#how-it-works">How It Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-gradient ms-lg-3 mt-3 mt-lg-0">Request a Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  .embed-responsive {
-      position: relative;
-      display: block;
-      height: 0;
-      padding: 0;
-      overflow: hidden;
-  }
+    <!-- ## MAIN CONTENT ## -->
+    <main>
 
-  .embed-responsive.embed-responsive-16by9 {
-      padding-bottom: 56.25%;
-  }
+        <!-- ## HERO SECTION ## -->
+        <section class="hero-section text-center text-md-start">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="display-3 mb-4">Your Kubernetes is Costing You. <br><span class="gradient-text">We'll Fix That.</span></h1>
+                        <p class="lead mb-4 text-white-50">
+                            Razorops is the intelligent AI agent that continuously optimizes your Kubernetes clusters for peak performance and minimal cost. Stop guessing, start saving.
+                        </p>
+                        <div class="d-grid gap-2 d-sm-flex justify-content-center justify-content-md-start">
+                            <a href="#pricing" class="btn btn-gradient btn-lg">Start Free Trial</a>
+                            <a href="#how-it-works" class="btn btn-outline-light btn-lg">See How It Works</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-5 mt-md-0">
 
-  .embed-responsive-item {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-  }
-</style>
+                          <!-- 
+      This is an animated SVG demonstrating the Razorops dashboard.
+      It shows cost decreasing, performance increasing, and AI recommendations being applied.
+      You can embed this SVG directly into your homepage's hero section.
+    -->
+    <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
+        <!-- Define gradients and filters -->
+        <defs>
+            <linearGradient id="gradient-text-fill" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#8E2DE2;" />
+                <stop offset="100%" style="stop-color:#4A00E0;" />
+            </linearGradient>
+            <linearGradient id="gradient-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#05020a;" />
+                <stop offset="100%" style="stop-color:#11051f;" />
+            </linearGradient>
+        </defs>
 
-<script>
-  $('#videoModal').on('hidden.bs.modal', function () {
-            location.reload(); // Reload the current page
-        });
+        <!-- Background -->
+        <rect width="700" height="450" rx="15" fill="url(#gradient-bg)" />
+        
+        <!-- Header -->
+        <text x="30" y="45" font-size="24" font-weight="bold" fill="white">
+            RAZOROPS<tspan fill="url(#gradient-text-fill)">.ai</tspan>
+        </text>
+        <circle cx="650" cy="40" r="12" fill="#28a745">
+             <animate attributeName="fill" values="#28a745;#ffc107;#28a745" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <text x="580" y="45" font-size="12" fill="#ccc">LIVE</text>
+        
+        <!-- Main content area -->
+        <g id="main-content">
 
-</script>
+            <!-- Cost Savings Chart -->
+            <g id="cost-chart">
+                <text x="40" y="90" font-size="14" fill="#ccc" font-weight="500">Cloud Cost</text>
+                <!-- Grid lines -->
+                <line x1="40" y1="120" x2="330" y2="120" stroke="#333" stroke-width="1" />
+                <line x1="40" y1="150" x2="330" y2="150" stroke="#333" stroke-width="1" />
+                <line x1="40" y1="180" x2="330" y2="180" stroke="#333" stroke-width="1" />
+                <!-- Animated Cost Line -->
+                <polyline points="40,120 100,130 150,110 200,140 250,160 330,180" fill="none" stroke="#E2506B" stroke-width="2">
+                    <animate attributeName="points" dur="3s" repeatCount="indefinite"
+                             values="40,120 100,130 150,110 200,140 250,160 330,180; 
+                                     40,140 100,150 150,130 200,160 250,180 330,200;
+                                     40,120 100,130 150,110 200,140 250,160 330,180" />
+                </polyline>
+                 <text x="260" y="155" font-size="12" fill="#E2506B" font-weight="bold">
+                    -38%
+                     <animate attributeName="fill-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                </text>
+            </g>
 
+            <!-- Performance Chart -->
+            <g id="performance-chart">
+                <text x="370" y="90" font-size="14" fill="#ccc" font-weight="500">App Performance</text>
+                <!-- Grid lines -->
+                <line x1="370" y1="120" x2="660" y2="120" stroke="#333" stroke-width="1" />
+                <line x1="370" y1="150" x2="660" y2="150" stroke="#333" stroke-width="1" />
+                <line x1="370" y1="180" x2="660" y2="180" stroke="#333" stroke-width="1" />
+                <!-- Animated Performance Line -->
+                <polyline points="370,180 430,170 480,150 530,130 580,120 660,110" fill="none" stroke="#28a745" stroke-width="2">
+                     <animate attributeName="points" dur="3s" repeatCount="indefinite"
+                             values="370,180 430,170 480,150 530,130 580,120 660,110;
+                                     370,160 430,150 480,130 530,110 580,100 660,90;
+                                     370,180 430,170 480,150 530,130 580,120 660,110" />
+                </polyline>
+                 <text x="590" y="105" font-size="12" fill="#28a745" font-weight="bold">
+                    +25%
+                     <animate attributeName="fill-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                </text>
+            </g>
 
-  <header class="hero text-center">
-    <div class="container">
-      <h1 class="display-4 fw-bold">RazorOps</h1>
-      <p class="lead">AI/ML for Smarter, Cost-Efficient Kubernetes</p>
-      <a href="#signup" class="btn btn-light btn-lg mt-3">Get Started Free</a>
-    </div>
-  </header>
+            <!-- Divider -->
+            <line x1="40" y1="230" x2="660" y2="230" stroke="#444" stroke-width="1" />
 
-  <section class="container py-5">
-    <div class="row text-center">
-      <div class="col-md-4">
-        <div class="features-icon mb-3">⚙️</div>
-        <h5>Intelligent Rightsizing</h5>
-        <p>Auto-tune CPU & memory for optimal performance and cost.</p>
-      </div>
-      <div class="col-md-4">
-        <div class="features-icon mb-3">📈</div>
-        <h5>Predictive Autoscaling</h5>
-        <p>Scale pods and nodes based on real-time ML insights.</p>
-      </div>
-      <div class="col-md-4">
-        <div class="features-icon mb-3">💰</div>
-        <h5>Cost Optimization</h5>
-        <p>Save up to 60% on cloud spend with intelligent suggestions.</p>
-      </div>
-    </div>
-  </section>
+            <!-- AI Recommendations -->
+            <g id="recommendations">
+                <text x="40" y="260" font-size="14" fill="#ccc" font-weight="500">AI Recommendations</text>
+                
+                <!-- Recommendation 1 -->
+                <g opacity="0">
+                     <animate attributeName="opacity" begin="0.5s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
+                     <rect x="40" y="280" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
+                     <text x="50" y="300" font-size="12" fill="#eee">Downsize `api-gateway`: CPU request 2000m -> 500m</text>
+                     <text x="550" y="300" font-size="12" fill="#28a745">Applying...</text>
+                </g>
+                
+                <!-- Recommendation 2 -->
+                 <g opacity="0">
+                     <animate attributeName="opacity" begin="2s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
+                     <rect x="40" y="320" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
+                     <text x="50" y="340" font-size="12" fill="#eee">Scale `worker-nodes` replica: 5 -> 3 (low traffic)</text>
+                      <text x="550" y="340" font-size="12" fill="#28a745">Applied</text>
+                </g>
 
-  <section class="bg-light py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">Why RazorOps?</h2>
-      <p class="mb-4">Combine CI/CD automation with AI-powered Kubernetes optimization in a single powerful platform.</p>
-      <div class="row">
-        <div class="col-md-3">
-          <h5>✅ AI-Driven Autoscaling</h5>
+                <!-- Recommendation 3 -->
+                <g opacity="0">
+                     <animate attributeName="opacity" begin="3.5s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
+                     <rect x="40" y="360" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
+                     <text x="50" y="380" font-size="12" fill="#eee">Increase memory for `cache-db`: 1Gi -> 2Gi</text>
+                     <text x="550" y="380" font-size="12" fill="#28a745">Applied</text>
+                </g>
+                
+                <!-- Reset animation trigger -->
+                <animate id="reset" attributeName="opacity" from="1" to="1" begin="6s" dur="1s" fill="freeze" />
+            </g>
+
+            <!-- Total Savings -->
+            <g id="total-savings">
+                 <text x="40" y="420" font-size="16" fill="white" font-weight="600">
+                     Projected Monthly Savings: <tspan fill="url(#gradient-text-fill)" font-size="18">$6,720</tspan>
+                 </text>
+                  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0;0;1;1"/>
+            </g>
+        </g>
+    </svg>
+
+                        <!-- Placeholder for a dynamic graphic or animation -->
+                        <!-- <img src="https://placehold.co/600x400/000000/4A00E0?text=AI+Dashboard+View" class="img-fluid rounded-3 shadow-lg" alt="Dashboard showing Kubernetes cost and performance optimization graph."> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ## TRUSTED BY / LOGO BAR ## -->
+        <!-- <section class="py-5">
+            <div class="container">
+                <p class="text-center text-white-50 mb-4">WORKS WITH YOUR FAVORITE CLOUD AND TOOLS</p>
+                <div class="d-flex flex-wrap justify-content-center align-items-center">
+                    <img src="https://placehold.co/100x40/000000/ffffff?text=AWS" alt="AWS Logo" class="mx-3 my-2" style="filter: grayscale(100%) opacity(0.6); height: 30px;">
+                    <img src="https://placehold.co/100x40/000000/ffffff?text=GCP" alt="Google Cloud Platform Logo" class="mx-3 my-2" style="filter: grayscale(100%) opacity(0.6); height: 30px;">
+                    <img src="https://placehold.co/100x40/000000/ffffff?text=Azure" alt="Microsoft Azure Logo" class="mx-3 my-2" style="filter: grayscale(100%) opacity(0.6); height: 30px;">
+                    <img src="https://placehold.co/100x40/000000/ffffff?text=Kubernetes" alt="Kubernetes Logo" class="mx-3 my-2" style="filter: grayscale(100%) opacity(0.6); height: 30px;">
+                    <img src="https://placehold.co/100x40/000000/ffffff?text=Helm" alt="Helm Logo" class="mx-3 my-2" style="filter: grayscale(100%) opacity(0.6); height: 30px;">
+                </div>
+            </div>
+        </section> -->
+
+        <!-- ## FEATURES SECTION ## -->
+        <section id="features" class="section-padding section-bg-gradient">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">The <span class="gradient-text">Future</span> of Kubernetes Management</h2>
+                    <p class="lead text-white-50">Automated, intelligent, and built for modern DevOps.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <i class="bi bi-graph-down-arrow feature-icon gradient-text"></i>
+                            <h3 class="fs-4 fw-semibold mb-3">AI-Driven Cost Reduction</h3>
+                            <p class="text-white-50">Our AI analyzes your usage patterns and recommends precise resource adjustments to eliminate waste, cutting your cloud bill by up to 60%.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <i class="bi bi-speedometer2 feature-icon gradient-text"></i>
+                            <h3 class="fs-4 fw-semibold mb-3">Autonomous Performance</h3>
+                            <p class="text-white-50">Automatically identify and resolve performance bottlenecks. Razorops ensures your applications always have the resources they need, when they need them.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <i class="bi bi-robot feature-icon gradient-text"></i>
+                            <h3 class="fs-4 fw-semibold mb-3">Automated Actions</h3>
+                            <p class="text-white-50">Move from recommendations to results seamlessly. Configure Razorops to automatically apply approved changes to your clusters, 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card text-center">
+                            <i class="bi bi-shield-check feature-icon gradient-text"></i>
+                            <h3 class="fs-4 fw-semibold mb-3">Security & Compliance</h3>
+                            <p class="text-white-50">Our agent suggests best-practice configurations, helping you maintain a secure and compliant Kubernetes environment without the manual overhead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ## HOW IT WORKS SECTION ## -->
+        <section id="how-it-works" class="section-padding">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Optimize in 3 Simple Steps</h2>
+                    <p class="lead text-white-50">Go from complexity to clarity in minutes.</p>
+                </div>
+                <div class="row align-items-center g-5">
+                    <div class="col-md-6">
+                        <!-- Placeholder for an illustrative image/diagram -->
+                        <img src="https://placehold.co/600x500/000000/8E2DE2?text=Connect+>+Analyze+>+Optimize" class="img-fluid rounded-3" alt="Diagram showing the 3-step process: Connect cluster, AI analyzes, Razorops optimizes.">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex mb-4">
+                            <div class="fs-2 me-3 gradient-text"><i class="bi bi-1-circle"></i></div>
+                            <div>
+                                <h4 class="fw-semibold">Connect Your Cluster</h4>
+                                <p class="text-white-50">Securely connect Razorops to your Kubernetes environment with a single command. Our agent starts gathering metrics immediately, with zero impact on performance.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <div class="fs-2 me-3 gradient-text"><i class="bi bi-2-circle"></i></div>
+                            <div>
+                                <h4 class="fw-semibold">Get AI Recommendations</h4>
+                                <p class="text-white-50">Our AI engine analyzes resource utilization, performance data, and cost metrics to generate clear, actionable recommendations in plain English.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="fs-2 me-3 gradient-text"><i class="bi bi-3-circle"></i></div>
+                            <div>
+                                <h4 class="fw-semibold">Automate & Save</h4>
+                                <p class="text-white-50">Review the insights on your dashboard. Approve changes with one click or enable full automation to let Razorops apply optimizations for you, continuously.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ## PRICING SECTION ## -->
+        <section id="pricing" class="section-padding section-bg-gradient">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Transparent Pricing</h2>
+                    <p class="lead text-white-50">Choose the plan that's right for your scale. No hidden fees.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- Free Plan -->
+                    <div class="col-lg-4">
+                        <div class="feature-card text-center p-5">
+                            <h3 class="fw-semibold">Community</h3>
+                            <p class="text-white-50">For individuals and small projects</p>
+                            <p class="display-4 fw-bold my-4">$0<span class="fs-5 text-white-50">/mo</span></p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Up to 1 Cluster</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Core Cost Recommendations</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Manual Apply</li>
+                                <li class="mb-2 text-white-50"><i class="bi bi-x-circle me-2"></i>Performance Tuning</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-light w-100">Get Started</a>
+                        </div>
+                    </div>
+                    <!-- Pro Plan -->
+                    <div class="col-lg-4">
+                        <div class="feature-card text-center p-5 border-2 border-primary" style="--bs-border-opacity: .5; border-color: #8E2DE2 !important;">
+                            <span class="badge bg-primary mb-3">Most Popular</span>
+                            <h3 class="fw-semibold">Pro</h3>
+                            <p class="text-white-50">For growing teams and businesses</p>
+                            <p class="display-4 fw-bold my-4">$99<span class="fs-5 text-white-50">/mo</span></p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Up to 10 Clusters</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced Cost & Perf. Recs</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>1-Click & Automated Apply</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Priority Support</li>
+                            </ul>
+                            <a href="#" class="btn btn-gradient w-100">Start 14-Day Trial</a>
+                        </div>
+                    </div>
+                    <!-- Enterprise Plan -->
+                    <div class="col-lg-4">
+                        <div class="feature-card text-center p-5">
+                            <h3 class="fw-semibold">Enterprise</h3>
+                            <p class="text-white-50">For large-scale, critical infrastructure</p>
+                            <p class="display-4 fw-bold my-4">Custom</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Unlimited Clusters</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom AI Models</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated Support & SLA</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Security & Compliance Audits</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline-light w-100">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ## FINAL CTA / CONTACT SECTION ## -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="fw-bold mb-3">Ready to <span class="gradient-text">Stop Wasting</span> Money on Kubernetes?</h2>
+                        <p class="lead text-white-50 mb-4">
+                            Schedule a free, no-obligation demo with our specialists. We'll show you how much you can save in just 15 minutes.
+                        </p>
+                        <a href="#" class="btn btn-gradient btn-lg">Schedule Your Free Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ## FOOTER ## -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 text-white-50">&copy; 2024 Razorops Inc. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none me-3"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white-50 text-decoration-none me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-3">
-          <h5>✅ DevOps-Friendly Dashboard</h5>
-        </div>
-        <div class="col-md-3">
-          <h5>✅ Real-time Anomaly Detection</h5>
-        </div>
-        <div class="col-md-3">
-          <h5>✅ Cloud Cost Transparency</h5>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-section text-center">
-    <div class="container">
-      <h2 class="mb-3">Ready to Optimize Your Kubernetes Stack?</h2>
-      <p class="lead">Start your free trial and unlock powerful AI insights to save time and money.</p>
-      <a id="signup" href="#" class="btn btn-primary btn-lg mt-3">Start Free Trial</a>
-    </div>
-  </section>
+    </footer>
 
 
-
-  <footer class="text-center py-4">
-    <p>&copy; 2025 RazorOps. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-

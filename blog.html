@@ -1,47 +1,351 @@
----
-layout: blog
-title: Razorops | Blog
-description: Learn how to achieve continuous delivery to Kubernetes with Helm, Istio, Selenium testings, security testing, performance testing, and more.
-keywords: Docker, continuous delivery, Kubernetes with Helm, Istio, Selenium testings, security testing, performance testing
-canonical_url: "https://razorops.com/blog"
-image: /images/razorops-demo.webp
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ## META TAGS - VITAL FOR SEO ## -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Razorops - AI, Kubernetes & Cloud Optimization Insights</title>
+    <meta name="description" content="Explore the official Razorops blog for expert insights, tutorials, and analysis on Kubernetes cost optimization, performance tuning, AI in DevOps, and cloud-native security.">
+    <meta name="keywords" content="Kubernetes blog, DevOps blog, AI optimization, cloud cost, performance tuning, Razorops blog">
+    <meta name="author" content="Razorops Inc.">
+    
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Blog | Razorops - AI, Kubernetes & Cloud Optimization Insights">
+    <meta property="og:description" content="Expert insights on Kubernetes cost optimization, performance tuning, AI in DevOps, and cloud-native security.">
+    <meta property="og:image" content="https://placehold.co/1200x630/11051f/ffffff?text=RAZOROPS+BLOG">
+    <meta property="og:url" content="https://www.razorops.com/blog">
+    <meta property="og:type" content="website">
 
-<div class="customers-banner">
-  <img src="/images/v2/razorops-white-logo.webp" height="45" alt="razorops">
-  <h2>Simplest Container Native CI/CD Platform</h2>
-  <div class="searchbox">
-    <center>
-    {% include search.html %}
-    </center>
-  </div>
-</div>
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Razorops - AI, Kubernetes & Cloud Optimization Insights">
+    <meta name="twitter:description" content="Expert insights on Kubernetes cost optimization, performance tuning, AI in DevOps, and cloud-native security.">
+    <meta name="twitter:image" content="https://placehold.co/1200x600/11051f/ffffff?text=RAZOROPS+BLOG">
 
-<div class="container">
-  <div class="blog-wraper">
-    <div class="blog-post">
-      {% assign blogs = site.posts %}
-      {% for post in blogs %}
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          <div class="col-sm-4 post-box">
-            <div class="blog-content">
-                <img src="{{ post.image }}" alt="{{ post.title }}"/>
-              <div class="blog-body">
-                <time>{{ post.date | date_to_string }}</time>
-                <h1>{{ post.title }}</h1>
+    <!-- ## FRAMEWORKS & FONTS ## -->
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-                <p class="blogs-description">{{ post.description}}</p>
-                <br>
-                <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="blog-read-more">Read More</a> -->
-              </div>
+    <!-- ## CUSTOM STYLES ## -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #f8f9fa;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #8E2DE2, #4A00E0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 700;
+        }
+        .btn-gradient {
+            background-image: linear-gradient(to right, #8E2DE2 0%, #4A00E0 51%, #8E2DE2 100%);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: 0.5s;
+            box-shadow: 0 4px 15px 0 rgba(142, 45, 226, 0.3);
+        }
+        .btn-gradient:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .section-bg-gradient {
+            background: linear-gradient(160deg, #05020a 0%, #11051f 100%);
+        }
+        .page-header {
+            padding: 120px 0 60px;
+        }
+        .blog-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: #8E2DE2;
+        }
+        .blog-card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card-title {
+            color: #fff;
+            font-weight: 600;
+        }
+        .blog-card-text {
+            color: #adb5bd;
+            flex-grow: 1;
+        }
+        .blog-card a {
+            text-decoration: none;
+        }
+        .category-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3em 0.8em;
+            background: linear-gradient(90deg, #8E2DE2, #4A00E0);
+            color: white;
+            border-radius: 50px;
+        }
+        .search-bar {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .search-bar::placeholder {
+            color: #adb5bd;
+        }
+        .search-bar:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: #8E2DE2;
+            box-shadow: none;
+        }
+        .footer {
+            background-color: #05020a;
+            padding: 40px 0;
+        }
+        .cta-section {
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ## HEADER & NAVIGATION ## -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand fs-4 fw-bold" href="/index.html">RAZOROPS<span class="gradient-text">.ai</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="/features.html">Features</a> -->
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                            <!-- <a class="nav-link" href="/pricing.html">Pricing</a> -->
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="/contact.html">Contact</a> -->
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="/schedule-demo.html" class="btn btn-gradient ms-lg-3 mt-3 mt-lg-0">Request a Demo</a>
+
+                </div>
             </div>
-          </div>
-        </a>
-      {% endfor %}
-      <div class="clearfix"></div>
-      <br>
-    </div>
-  </div>
-</div>
+        </nav>
+    </header>
+
+    <!-- ## MAIN CONTENT ## -->
+    <main>
+
+        <!-- ## PAGE HEADER ## -->
+        <section class="page-header text-center section-bg-gradient">
+            <div class="container">
+                <h1 class="display-4 fw-bold text-white">The <span class="gradient-text">Razorops</span> Blog</h1>
+                <p class="lead text-white-50 mt-3 col-lg-8 mx-auto">Expert insights, tutorials, and analysis on AI, Kubernetes, and Cloud Cost Optimization.</p>
+            </div>
+        </section>
+
+        <!-- ## SEARCH & FILTER ## -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <input type="search" class="form-control form-control-lg rounded-pill search-bar px-4" placeholder="Search articles...">
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+        <!-- ## BLOG GRID ## -->
+        <section class="pb-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Blog Post 1 -->
+                    <article class="col-md-6 col-lg-4">
+                        <a href="#" class="text-decoration-none">
+                            <div class="blog-card">
+                                <img src="https://placehold.co/600x400/11051f/8E2DE2?text=Cost+Traps" class="card-img-top" alt="Abstract image representing cost traps in the cloud.">
+                                <div class="blog-card-body">
+                                    <span class="category-badge mb-3 d-inline-block">Cost Optimization</span>
+                                    <h3 class="h5 blog-card-title mb-3">The Top 5 Kubernetes Cost Traps and How to Avoid Them</h3>
+                                    <p class="blog-card-text">Kubernetes is powerful, but its complexity can hide significant cost inefficiencies. We uncover the top 5 areas where you might be overspending...</p>
+                                    <p class="text-white-50 mt-auto mb-0"><small>By Jane Doe &bull; June 20, 2025</small></p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- Blog Post 2 -->
+                    <article class="col-md-6 col-lg-4">
+                        <a href="#" class="text-decoration-none">
+                            <div class="blog-card">
+                                <img src="https://placehold.co/600x400/11051f/4A00E0?text=AI+in+DevOps" class="card-img-top" alt="Abstract image showing AI network connections.">
+                                <div class="blog-card-body">
+                                    <span class="category-badge mb-3 d-inline-block">Performance</span>
+                                    <h3 class="h5 blog-card-title mb-3">AI in DevOps: Optimizing Kubernetes Performance Automatically</h3>
+                                    <p class="blog-card-text">Performance tuning in Kubernetes is a dark art. What if you could automate it? We explore how AI is changing the game for good...</p>
+                                    <p class="text-white-50 mt-auto mb-0"><small>By John Smith &bull; June 15, 2025</small></p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- Blog Post 3 -->
+                    <article class="col-md-6 col-lg-4">
+                         <a href="#" class="text-decoration-none">
+                            <div class="blog-card">
+                                <img src="https://placehold.co/600x400/11051f/ffffff?text=K8s+Security" class="card-img-top" alt="Abstract image of a digital shield protecting data.">
+                                <div class="blog-card-body">
+                                    <span class="category-badge mb-3 d-inline-block">Security</span>
+                                    <h3 class="h5 blog-card-title mb-3">A Practical Guide to Kubernetes Security Posture Management</h3>
+                                    <p class="blog-card-text">Security can't be an afterthought. This guide walks through the key pillars of Kubernetes security and how an AI agent can help.</p>
+                                    <p class="text-white-50 mt-auto mb-0"><small>By Alex Johnson &bull; June 10, 2025</small></p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                     <!-- Add 3 more blog posts for a full row -->
+                     <article class="col-md-6 col-lg-4">
+                        <a href="#" class="text-decoration-none">
+                            <div class="blog-card">
+                                <img src="https://placehold.co/600x400/11051f/aaffaa?text=FinOps" class="card-img-top" alt="Graph showing financial savings.">
+                                <div class="blog-card-body">
+                                    <span class="category-badge mb-3 d-inline-block">FinOps</span>
+                                    <h3 class="h5 blog-card-title mb-3">Integrating AI into Your FinOps Strategy for Maximum ROI</h3>
+                                    <p class="blog-card-text">FinOps provides the framework, but AI provides the execution. Learn how to pair them to achieve unprecedented cloud savings.</p>
+                                    <p class="text-white-50 mt-auto mb-0"><small>By Emily White &bull; June 05, 2025</small></p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="col-md-6 col-lg-4">
+                        <a href="#" class="text-decoration-none">
+                            <div class="blog-card">
+                                <img src="https://placehold.co/600x400/11051f/aaaaff?text=Automation" class="card-img-top" alt="Gears and cogs turning, symbolizing automation.">
+                                <div class="blog-card-body">
+                                    <span class="category-badge mb-3 d-inline-block">Automation</span>
+                                    <h3 class="h5 blog-card-title mb-3">From Recommendation to Reality: The Power of Closed-Loop Automation</h3>
+                                    <p class="blog-card-text">Getting recommendations is one thing. Having them applied automatically, safely, and continuously is the future of operations.</p>
+                                    <p class="text-white-50 mt-auto mb-0"><small>By Marcus Chen &bull; May 28, 2025</small></p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="col-md-6 col-lg-4">
+                         <a href="#" class="text-decoration-none">
+                            <div class="blog-card">
+                                <img src="https://placehold.co/600x400/11051f/ffaaaa?text=Case+Study" class="card-img-top" alt="Company logo with growth chart.">
+                                <div class="blog-card-body">
+                                    <span class="category-badge mb-3 d-inline-block">Case Study</span>
+                                    <h3 class="h5 blog-card-title mb-3">How Acme Corp Cut Their EKS Bill by 47% with Razorops</h3>
+                                    <p class="blog-card-text">A real-world look at how our AI agent identified and eliminated waste for a leading e-commerce platform, saving them millions.</p>
+                                    <p class="text-white-50 mt-auto mb-0"><small>By Razorops Team &bull; May 22, 2025</small></p>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- PAGINATION -->
+                <nav aria-label="Blog page navigation" class="mt-5 pt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+         <!-- ## FINAL CTA / CONTACT SECTION ## -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="fw-bold mb-3">Ready to <span class="gradient-text">Stop Wasting</span> Money on Kubernetes?</h2>
+                        <p class="lead text-white-50 mb-4">
+                            Schedule a free, no-obligation demo with our specialists. We'll show you how much you can save in just 15 minutes.
+                        </p>
+                        <a href="#" class="btn btn-gradient btn-lg">Schedule Your Free Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- ## FINAL CTA / CONTACT SECTION ## -->
+        <!-- <section class="cta-section section-bg-gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="display-5 fw-bold text-white mb-3">Ready to <span class="gradient-text">Stop Wasting</span> Money on Kubernetes?</h2>
+                        <p class="lead text-white-50 mb-4">
+                            Our AI does more than just give advice. It takes action. Schedule a free, no-obligation demo and we'll show you how much you can save in 15 minutes.
+                        </p>
+                        <a href="contact.html" class="btn btn-gradient btn-lg">Schedule Your Free Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <!-- ## FOOTER ## -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 text-white-50">&copy; 2025 Razorops Inc. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none me-3"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="text-white-50 text-decoration-none me-3"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorops - Intelligent AI-Powered Kubernetes Optimization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #f87171, #f472b6, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-glow {
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.2), 0 0 5px rgba(167, 139, 250, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .card-glow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(167, 139, 250, 0.4), 0 0 10px rgba(167, 139, 250, 0.2);
+        }
+        .btn-primary {
+            background-image: linear-gradient(to right, #ef4444, #d946ef);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
+        }
+        .btn-secondary {
+             background-color: rgba(31, 41, 55, 0.5);
+             border: 1px solid #4f46e5;
+             transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #4f46e5;
+            color: white;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <!-- Print Button -->
+    <div class="no-print fixed top-4 right-4 z-50">
+        <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg shadow-lg flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v6a2 2 0 002 2h1v-4a1 1 0 011-1h8a1 1 0 011 1v4h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" />
+            </svg>
+            Print / Save as PDF
+        </button>
+    </div>
+
+    <div class="min-h-screen bg-gradient-to-br from-[#020617] via-[#111827] to-[#000000] px-4 py-12 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+
+            <!-- Header Section -->
+            <header class="text-center mb-12">
+                <div class="inline-block mb-4">
+                     <h2 class="text-3xl font-extrabold text-white tracking-widest">RAZOROPS<span class="text-indigo-400">.ai</span></h2>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+                    <span class="text-gradient">Stop Guessing</span>, Start Saving.
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">Intelligent AI-Powered Kubernetes Optimization.</p>
+            </header>
+            
+            <p class="text-center text-lg text-gray-300 mb-16 max-w-3xl mx-auto">
+                Are you struggling with skyrocketing Kubernetes costs and unpredictable performance at scale? You're not alone. Managing hundreds of nodes and pods across multiple clusters is a complex balancing act.
+            </p>
+
+            <!-- The Problem Section -->
+            <section class="mb-20">
+                <h2 class="text-3xl font-bold text-center text-white mb-10">The Problem</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Problem Card 1 -->
+                    <div class="card-glow bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-red-500/10 rounded-lg"><svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 10v-1m0 0a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path></svg></div>
+                            <h3 class="ml-4 text-lg font-semibold text-white">Massive Resource Waste</h3>
+                        </div>
+                        <p class="text-gray-400">Overprovisioned pods lead to inflated cloud bills and inefficient resource utilization.</p>
+                    </div>
+                     <!-- Problem Card 2 -->
+                    <div class="card-glow bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-yellow-500/10 rounded-lg"><svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
+                            <h3 class="ml-4 text-lg font-semibold text-white">Performance Bottlenecks</h3>
+                        </div>
+                        <p class="text-gray-400">Under-provisioned apps suffer from CPU throttling and OOM crashes, hurting user experience.</p>
+                    </div>
+                     <!-- Problem Card 3 -->
+                    <div class="card-glow bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-blue-500/10 rounded-lg"><svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
+                            <h3 class="ml-4 text-lg font-semibold text-white">Inefficient Scaling</h3>
+                        </div>
+                        <p class="text-gray-400">Reactive autoscaling results in either overspending during lulls or poor UX during peaks.</p>
+                    </div>
+                    <!-- Problem Card 4 -->
+                    <div class="card-glow bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-green-500/10 rounded-lg"><svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg></div>
+                            <h3 class="ml-4 text-lg font-semibold text-white">Underutilized Infrastructure</h3>
+                        </div>
+                        <p class="text-gray-400">Inefficiently packed pods lead to "node sprawl"—paying for idle capacity you don't use.</p>
+                    </div>
+                    <!-- Problem Card 5 -->
+                    <div class="card-glow bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-purple-500/10 rounded-lg"><svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+                            <h3 class="ml-4 text-lg font-semibold text-white">Missed Savings</h3>
+                        </div>
+                        <p class="text-gray-400">The complexity of spot & reserved instances leads to missed opportunities and higher costs.</p>
+                    </div>
+                     <!-- Problem Card 6 -->
+                    <div class="card-glow bg-gray-800/50 p-6 rounded-2xl border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="p-2 bg-teal-500/10 rounded-lg"><svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.778 16.222L5.657 18.343m12.728-12.728L16.222 7.778m0 8.444l2.121 2.121M7.778 7.778l2.121-2.121M12 21a9 9 0 110-18 9 9 0 010 18z"></path></svg></div>
+                            <h3 class="ml-4 text-lg font-semibold text-white">Multi-Cluster Chaos</h3>
+                        </div>
+                        <p class="text-gray-400">Managing configurations, security, and observability across clusters creates operational bottlenecks.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Solution Section -->
+            <section class="mb-20">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-white mb-4">The Solution: Your Intelligent Kubernetes Co-pilot</h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-12">
+                        Razorops is an AI-powered platform that continuously optimizes your Kubernetes clusters for peak performance and minimal cost.
+                    </p>
+                </div>
+                <div class="bg-gray-800/30 rounded-2xl p-8 border border-gray-700">
+                    <h3 class="text-2xl font-bold text-center text-white mb-8">How It Works</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+                        <!-- Solution Feature 1 -->
+                        <div class="flex">
+                           <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/20"><svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">AI-Powered "Right-Sizing"</h4>
+                                <p class="mt-1 text-gray-400">Our ML models analyze workloads to provide precise, safe resource recommendations, eliminating guesswork.</p>
+                            </div>
+                        </div>
+                        <!-- Solution Feature 2 -->
+                         <div class="flex">
+                           <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/20"><svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">Predictive Autoscaling</h4>
+                                <p class="mt-1 text-gray-400">We forecast your traffic patterns to ensure just-in-time scaling, perfectly matching capacity to demand.</p>
+                            </div>
+                        </div>
+                        <!-- Solution Feature 3 -->
+                         <div class="flex">
+                           <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/20"><svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg></div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">Intelligent Bin Packing</h4>
+                                <p class="mt-1 text-gray-400">Our advanced algorithms maximize node utilization, significantly reducing your infrastructure footprint.</p>
+                            </div>
+                        </div>
+                         <!-- Solution Feature 4 -->
+                         <div class="flex">
+                           <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/20"><svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">Automated Instance Management</h4>
+                                <p class="mt-1 text-gray-400">We intelligently leverage Spot & Reserved Instances to maximize savings without compromising stability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+             <!-- The Advantage Section -->
+            <section class="mb-20">
+                <h2 class="text-3xl font-bold text-center text-white mb-10">The Razorops Advantage</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="ml-3 text-lg text-gray-300">Reduce Cloud Spend by up to <span class="font-bold text-white text-gradient">60%</span></p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="ml-3 text-lg text-gray-300">Improve Application Performance & Reliability</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="ml-3 text-lg text-gray-300">Eliminate Manual Toil & Reactive Firefighting</p>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="ml-3 text-lg text-gray-300">Gain Deep Visibility & Actionable Insights</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- CTA Section -->
+            <section class="text-center bg-gray-800/50 rounded-2xl py-12 px-8 border border-indigo-500/30 shadow-2xl shadow-indigo-500/10">
+                 <h2 class="text-3xl font-bold text-white mb-4">Ready to unlock the true potential of Kubernetes?</h2>
+                 <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                    <a href="#" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg">
+                        Schedule a Demo
+                    </a>
+                    <a href="#" class="btn-secondary text-gray-300 font-bold py-3 px-8 rounded-full text-lg">
+                        Start a Free Proof-of-Concept
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center mt-16 text-gray-500">
+                <p>
+                    <a href="phone:+918688468400" class="hover:text-indigo-400 transition">+91 86884 68400</a>
+                    <span class="mx-2">|</span>
+                    <a href="mailto:sales@razorops.com" class="hover:text-indigo-400 transition">sales@razorops.com</a>
+                    <span class="mx-2">|</span>
+                    <a href="https://www.razorops.com" target="_blank" class="hover:text-indigo-400 transition">www.razorops.com</a>
+                </p>
+            </footer>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -156,6 +156,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/#features">Features</a>
                         </li>
@@ -184,9 +187,11 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <h1 class="display-3 mb-4">Your Kubernetes is Costing You. <br><span class="gradient-text">We'll Fix That.</span></h1>
+                        <h1 class="display-3 mb-4">Kubernetes Performance & <br><span class="gradient-text">Cost Optimization.</span></h1>
                         <p class="lead mb-4 text-white-50">
-                            Razorops is the intelligent AI agent that continuously optimizes your Kubernetes clusters for peak performance and minimal cost. Stop guessing, start saving.
+                            Razorops is an intelligent <b style="color: #fff; !important">AI agent</b> 
+                            that continuously optimizes your Kubernetes clusters for <b style="color: #fff; !important">peak performance</b> 
+                            at <b style="color: #fff; !important">minimal cost</b>. Stop guessing, start saving.
                         </p>
                         <div class="d-grid gap-2 d-sm-flex justify-content-center justify-content-md-start">
                             <a href="#pricing" class="btn btn-gradient btn-lg">Start Free Trial</a>
@@ -194,124 +199,118 @@
                         </div>
                     </div>
                     <div class="col-md-6 mt-5 mt-md-0">
+                        <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Define gradients and filters -->
+                            <defs>
+                                <linearGradient id="gradient-text-fill" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#8E2DE2;" />
+                                    <stop offset="100%" style="stop-color:#4A00E0;" />
+                                </linearGradient>
+                                <linearGradient id="gradient-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#05020a;" />
+                                    <stop offset="100%" style="stop-color:#11051f;" />
+                                </linearGradient>
+                            </defs>
 
-                          <!-- 
-      This is an animated SVG demonstrating the Razorops dashboard.
-      It shows cost decreasing, performance increasing, and AI recommendations being applied.
-      You can embed this SVG directly into your homepage's hero section.
-    -->
-    <svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
-        <!-- Define gradients and filters -->
-        <defs>
-            <linearGradient id="gradient-text-fill" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#8E2DE2;" />
-                <stop offset="100%" style="stop-color:#4A00E0;" />
-            </linearGradient>
-            <linearGradient id="gradient-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#05020a;" />
-                <stop offset="100%" style="stop-color:#11051f;" />
-            </linearGradient>
-        </defs>
+                            <!-- Background -->
+                            <rect width="700" height="450" rx="15" fill="url(#gradient-bg)" />
+                            
+                            <!-- Header -->
+                            <text x="30" y="45" font-size="24" font-weight="bold" fill="white">
+                                RAZOROPS<tspan fill="url(#gradient-text-fill)">.ai</tspan>
+                            </text>
+                            <circle cx="650" cy="40" r="12" fill="#28a745">
+                                <animate attributeName="fill" values="#28a745;#ffc107;#28a745" dur="4s" repeatCount="indefinite" />
+                            </circle>
+                            <text x="580" y="45" font-size="12" fill="#ccc">LIVE</text>
+                            
+                            <!-- Main content area -->
+                            <g id="main-content">
 
-        <!-- Background -->
-        <rect width="700" height="450" rx="15" fill="url(#gradient-bg)" />
-        
-        <!-- Header -->
-        <text x="30" y="45" font-size="24" font-weight="bold" fill="white">
-            RAZOROPS<tspan fill="url(#gradient-text-fill)">.ai</tspan>
-        </text>
-        <circle cx="650" cy="40" r="12" fill="#28a745">
-             <animate attributeName="fill" values="#28a745;#ffc107;#28a745" dur="4s" repeatCount="indefinite" />
-        </circle>
-        <text x="580" y="45" font-size="12" fill="#ccc">LIVE</text>
-        
-        <!-- Main content area -->
-        <g id="main-content">
+                                <!-- Cost Savings Chart -->
+                                <g id="cost-chart">
+                                    <text x="40" y="90" font-size="14" fill="#ccc" font-weight="500">Cloud Cost</text>
+                                    <!-- Grid lines -->
+                                    <line x1="40" y1="120" x2="330" y2="120" stroke="#333" stroke-width="1" />
+                                    <line x1="40" y1="150" x2="330" y2="150" stroke="#333" stroke-width="1" />
+                                    <line x1="40" y1="180" x2="330" y2="180" stroke="#333" stroke-width="1" />
+                                    <!-- Animated Cost Line -->
+                                    <polyline points="40,120 100,130 150,110 200,140 250,160 330,180" fill="none" stroke="#E2506B" stroke-width="2">
+                                        <animate attributeName="points" dur="3s" repeatCount="indefinite"
+                                                values="40,120 100,130 150,110 200,140 250,160 330,180; 
+                                                        40,140 100,150 150,130 200,160 250,180 330,200;
+                                                        40,120 100,130 150,110 200,140 250,160 330,180" />
+                                    </polyline>
+                                    <text x="260" y="155" font-size="12" fill="#E2506B" font-weight="bold">
+                                        -38%
+                                        <animate attributeName="fill-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                                    </text>
+                                </g>
 
-            <!-- Cost Savings Chart -->
-            <g id="cost-chart">
-                <text x="40" y="90" font-size="14" fill="#ccc" font-weight="500">Cloud Cost</text>
-                <!-- Grid lines -->
-                <line x1="40" y1="120" x2="330" y2="120" stroke="#333" stroke-width="1" />
-                <line x1="40" y1="150" x2="330" y2="150" stroke="#333" stroke-width="1" />
-                <line x1="40" y1="180" x2="330" y2="180" stroke="#333" stroke-width="1" />
-                <!-- Animated Cost Line -->
-                <polyline points="40,120 100,130 150,110 200,140 250,160 330,180" fill="none" stroke="#E2506B" stroke-width="2">
-                    <animate attributeName="points" dur="3s" repeatCount="indefinite"
-                             values="40,120 100,130 150,110 200,140 250,160 330,180; 
-                                     40,140 100,150 150,130 200,160 250,180 330,200;
-                                     40,120 100,130 150,110 200,140 250,160 330,180" />
-                </polyline>
-                 <text x="260" y="155" font-size="12" fill="#E2506B" font-weight="bold">
-                    -38%
-                     <animate attributeName="fill-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
-                </text>
-            </g>
+                                <!-- Performance Chart -->
+                                <g id="performance-chart">
+                                    <text x="370" y="90" font-size="14" fill="#ccc" font-weight="500">App Performance</text>
+                                    <!-- Grid lines -->
+                                    <line x1="370" y1="120" x2="660" y2="120" stroke="#333" stroke-width="1" />
+                                    <line x1="370" y1="150" x2="660" y2="150" stroke="#333" stroke-width="1" />
+                                    <line x1="370" y1="180" x2="660" y2="180" stroke="#333" stroke-width="1" />
+                                    <!-- Animated Performance Line -->
+                                    <polyline points="370,180 430,170 480,150 530,130 580,120 660,110" fill="none" stroke="#28a745" stroke-width="2">
+                                        <animate attributeName="points" dur="3s" repeatCount="indefinite"
+                                                values="370,180 430,170 480,150 530,130 580,120 660,110;
+                                                        370,160 430,150 480,130 530,110 580,100 660,90;
+                                                        370,180 430,170 480,150 530,130 580,120 660,110" />
+                                    </polyline>
+                                    <text x="590" y="105" font-size="12" fill="#28a745" font-weight="bold">
+                                        +25%
+                                        <animate attributeName="fill-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                                    </text>
+                                </g>
 
-            <!-- Performance Chart -->
-            <g id="performance-chart">
-                <text x="370" y="90" font-size="14" fill="#ccc" font-weight="500">App Performance</text>
-                <!-- Grid lines -->
-                <line x1="370" y1="120" x2="660" y2="120" stroke="#333" stroke-width="1" />
-                <line x1="370" y1="150" x2="660" y2="150" stroke="#333" stroke-width="1" />
-                <line x1="370" y1="180" x2="660" y2="180" stroke="#333" stroke-width="1" />
-                <!-- Animated Performance Line -->
-                <polyline points="370,180 430,170 480,150 530,130 580,120 660,110" fill="none" stroke="#28a745" stroke-width="2">
-                     <animate attributeName="points" dur="3s" repeatCount="indefinite"
-                             values="370,180 430,170 480,150 530,130 580,120 660,110;
-                                     370,160 430,150 480,130 530,110 580,100 660,90;
-                                     370,180 430,170 480,150 530,130 580,120 660,110" />
-                </polyline>
-                 <text x="590" y="105" font-size="12" fill="#28a745" font-weight="bold">
-                    +25%
-                     <animate attributeName="fill-opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
-                </text>
-            </g>
+                                <!-- Divider -->
+                                <line x1="40" y1="230" x2="660" y2="230" stroke="#444" stroke-width="1" />
 
-            <!-- Divider -->
-            <line x1="40" y1="230" x2="660" y2="230" stroke="#444" stroke-width="1" />
+                                <!-- AI Recommendations -->
+                                <g id="recommendations">
+                                    <text x="40" y="260" font-size="14" fill="#ccc" font-weight="500">AI Recommendations</text>
+                                    
+                                    <!-- Recommendation 1 -->
+                                    <g opacity="0">
+                                        <animate attributeName="opacity" begin="0.5s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
+                                        <rect x="40" y="280" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
+                                        <text x="50" y="300" font-size="12" fill="#eee">Downsize `api-gateway`: CPU request 2000m -> 500m</text>
+                                        <text x="550" y="300" font-size="12" fill="#28a745">Applying...</text>
+                                    </g>
+                                    
+                                    <!-- Recommendation 2 -->
+                                    <g opacity="0">
+                                        <animate attributeName="opacity" begin="2s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
+                                        <rect x="40" y="320" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
+                                        <text x="50" y="340" font-size="12" fill="#eee">Scale `worker-nodes` replica: 5 -> 3 (low traffic)</text>
+                                        <text x="550" y="340" font-size="12" fill="#28a745">Applied</text>
+                                    </g>
 
-            <!-- AI Recommendations -->
-            <g id="recommendations">
-                <text x="40" y="260" font-size="14" fill="#ccc" font-weight="500">AI Recommendations</text>
-                
-                <!-- Recommendation 1 -->
-                <g opacity="0">
-                     <animate attributeName="opacity" begin="0.5s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
-                     <rect x="40" y="280" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
-                     <text x="50" y="300" font-size="12" fill="#eee">Downsize `api-gateway`: CPU request 2000m -> 500m</text>
-                     <text x="550" y="300" font-size="12" fill="#28a745">Applying...</text>
-                </g>
-                
-                <!-- Recommendation 2 -->
-                 <g opacity="0">
-                     <animate attributeName="opacity" begin="2s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
-                     <rect x="40" y="320" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
-                     <text x="50" y="340" font-size="12" fill="#eee">Scale `worker-nodes` replica: 5 -> 3 (low traffic)</text>
-                      <text x="550" y="340" font-size="12" fill="#28a745">Applied</text>
-                </g>
+                                    <!-- Recommendation 3 -->
+                                    <g opacity="0">
+                                        <animate attributeName="opacity" begin="3.5s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
+                                        <rect x="40" y="360" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
+                                        <text x="50" y="380" font-size="12" fill="#eee">Increase memory for `cache-db`: 1Gi -> 2Gi</text>
+                                        <text x="550" y="380" font-size="12" fill="#28a745">Applied</text>
+                                    </g>
+                                    
+                                    <!-- Reset animation trigger -->
+                                    <animate id="reset" attributeName="opacity" from="1" to="1" begin="6s" dur="1s" fill="freeze" />
+                                </g>
 
-                <!-- Recommendation 3 -->
-                <g opacity="0">
-                     <animate attributeName="opacity" begin="3.5s" dur="1s" values="0;1" fill="freeze" repeatCount="1"/>
-                     <rect x="40" y="360" width="620" height="30" rx="5" fill="rgba(255,255,255,0.05)" />
-                     <text x="50" y="380" font-size="12" fill="#eee">Increase memory for `cache-db`: 1Gi -> 2Gi</text>
-                     <text x="550" y="380" font-size="12" fill="#28a745">Applied</text>
-                </g>
-                
-                <!-- Reset animation trigger -->
-                <animate id="reset" attributeName="opacity" from="1" to="1" begin="6s" dur="1s" fill="freeze" />
-            </g>
-
-            <!-- Total Savings -->
-            <g id="total-savings">
-                 <text x="40" y="420" font-size="16" fill="white" font-weight="600">
-                     Projected Monthly Savings: <tspan fill="url(#gradient-text-fill)" font-size="18">$6,720</tspan>
-                 </text>
-                  <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0;0;1;1"/>
-            </g>
-        </g>
-    </svg>
+                                <!-- Total Savings -->
+                                <g id="total-savings">
+                                    <text x="40" y="420" font-size="16" fill="white" font-weight="600">
+                                        Projected Monthly Savings: <tspan fill="url(#gradient-text-fill)" font-size="18">$6,720</tspan>
+                                    </text>
+                                    <animate attributeName="opacity" dur="6s" repeatCount="indefinite" values="0;0;0;0;1;1"/>
+                                </g>
+                            </g>
+                        </svg>
 
                         <!-- Placeholder for a dynamic graphic or animation -->
                         <!-- <img src="https://placehold.co/600x400/000000/4A00E0?text=AI+Dashboard+View" class="img-fluid rounded-3 shadow-lg" alt="Dashboard showing Kubernetes cost and performance optimization graph."> -->
@@ -427,16 +426,16 @@
                     <!-- Free Plan -->
                     <div class="col-lg-4">
                         <div class="feature-card text-center p-5">
-                            <h3 class="fw-semibold">Community</h3>
+                            <h3 class="fw-semibold">FREE POC</h3>
                             <p class="text-white-50">For individuals and small projects</p>
                             <p class="display-4 fw-bold my-4">$0<span class="fs-5 text-white-50">/mo</span></p>
                             <ul class="list-unstyled text-start mb-4">
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Up to 1 Cluster</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Core Cost Recommendations</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Manual Apply</li>
-                                <li class="mb-2 text-white-50"><i class="bi bi-x-circle me-2"></i>Performance Tuning</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Performance Tuning</li>
                             </ul>
-                            <a href="#" class="btn btn-outline-light w-100">Get Started</a>
+                            <a href="/schedule-demo.html" class="btn btn-outline-light w-100">Get Started</a>
                         </div>
                     </div>
                     <!-- Pro Plan -->
@@ -447,13 +446,13 @@
                             <p class="text-white-50">For growing teams and businesses</p>
                             <p class="display-4 fw-bold my-4">$2<span class="fs-5 text-white-50">/vCPU/Mo</span></p>
                             <ul class="list-unstyled text-start mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Up to 5 Clusters</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Up to 10 Clusters</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>AI Performance Tuning</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced Cost & Perf. Recs</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>1-Click & Automated Apply</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Priority Support</li>
                             </ul>
-                            <a href="#" class="btn btn-gradient w-100">Start 14-Day Trial</a>
+                            <a href="/schedule-demo.html" class="btn btn-gradient w-100">Get Started</a>
                         </div>
                     </div>
                     <!-- Enterprise Plan -->
